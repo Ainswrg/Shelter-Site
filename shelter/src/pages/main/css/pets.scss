@@ -1,0 +1,135 @@
+$secondary: #f1cdb3;
+
+.pets {
+  height: 877px;
+  &__container {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    max-height: 697px;
+  }
+  &__heading {
+    margin: 0 auto;
+    margin-top: 80px;
+    max-width: 400px;
+    font-family: Georgia;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+  .slider {
+    margin-top: 60px;
+    height: 435px;
+    display: grid;
+    grid-template-columns: 52px 990px 52px;
+    column-gap: 53px;
+    grid-template-rows: 1fr;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    &__arrow-left,
+    &__arrow-right {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid $secondary;
+      position: relative;
+      &:hover {
+        background-color: #f6b688;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      &:after {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+    }
+    &__arrow-left {
+      &:after {
+        content: url('../../../assets/images/Arrow-left.svg');
+      }
+    }
+    &__arrow-right {
+      &:after {
+        content: url('../../../assets/images/Arrow-right.svg');
+      }
+    }
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 270px);
+      column-gap: 90px;
+      .card {
+        width: 270px;
+        height: 435px;
+        background-color: #fff;
+        display: grid;
+        figure {
+          margin: 0;
+          height: 300px;
+        }
+        figcaption {
+          margin-top: 25px;
+          display: flex;
+          justify-content: center;
+          font-family: Georgia;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 23px;
+          letter-spacing: 0.06em;
+          text-align: center;
+        }
+        &__button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          margin-top: 20px;
+          background-color: transparent;
+          height: 50px;
+          width: 185px;
+          border-radius: 100px;
+          font-family: Georgia;
+          font-size: 17px;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0.06em;
+          text-align: left;
+          color: #000000;
+          cursor: pointer;
+          &:hover {
+            background-color: #f6b688;
+            transition: 0.3s ease-in-out;
+          }
+          border: 1px solid $secondary;
+        }
+      }
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: $secondary;
+    height: 52px;
+    width: 261px;
+    border-radius: 100px;
+    font-family: Georgia;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: #000000;
+    cursor: pointer;
+    &:hover {
+      background-color: #f6b688;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
