@@ -1,99 +1,99 @@
-$primary: #f1cdb3;
+// $primary: #f1cdb3;
 
-.footer {
-  height: 350px;
-  background: url('../../../assets/images/start-screen-background.png');
-  &__container {
-    display: grid;
-    max-width: 1200px;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 160px;
-    margin: 0 auto;
-    height: 310px;
-    padding-top: 40px;
-  }
-  &__contacts {
-    margin-top: 16px;
-    width: 278px;
-    height: 234px;
-  }
-  &__contacts-title,
-  &__location-title {
-    margin: 0;
-    font-family: Georgia;
-    font-size: 35px;
-    font-weight: 400;
-    line-height: 45px;
-    letter-spacing: 0.06em;
-    text-align: left;
-    color: #fff;
-  }
-  .link-text {
-    font-family: Georgia;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 23px;
-    letter-spacing: 0.06em;
-    position: relative;
+// .footer {
+//   height: 350px;
+//   background: url('../../../assets/images/start-screen-background.png');
+//   &__container {
+//     display: grid;
+//     max-width: 1200px;
+//     grid-template-columns: repeat(3, 1fr);
+//     column-gap: 160px;
+//     margin: 0 auto;
+//     height: 310px;
+//     padding-top: 40px;
+//   }
+//   &__contacts {
+//     margin-top: 16px;
+//     width: 278px;
+//     height: 234px;
+//   }
+//   &__contacts-title,
+//   &__location-title {
+//     margin: 0;
+//     font-family: Georgia;
+//     font-size: 35px;
+//     font-weight: 400;
+//     line-height: 45px;
+//     letter-spacing: 0.06em;
+//     text-align: left;
+//     color: #fff;
+//   }
+//   .link-text {
+//     font-family: Georgia;
+//     font-size: 20px;
+//     font-weight: 400;
+//     line-height: 23px;
+//     letter-spacing: 0.06em;
+//     position: relative;
 
-    a {
-      color: $primary;
-      text-decoration: none;
-    }
-  }
-  &__mail {
-    margin: 0;
-    margin-top: 45px;
-    padding-left: 60px;
-    &::before {
-      content: url('../../../assets/icons/mail.svg');
-      position: absolute;
-      top: -2px;
-      left: 0px;
-    }
-  }
-  &__telephone {
-    margin: 0;
-    margin-top: 50px;
-    padding-left: 60px;
-    &::before {
-      content: url('../../../assets/icons/phone.svg');
-      position: absolute;
-      top: -6px;
-      left: 0px;
-    }
-  }
-  &__location {
-    margin-top: 16px;
-    width: 302px;
-    height: 234px;
-  }
+//     a {
+//       color: $primary;
+//       text-decoration: none;
+//     }
+//   }
+//   &__mail {
+//     margin: 0;
+//     margin-top: 45px;
+//     padding-left: 60px;
+//     &::before {
+//       content: url('../../../assets/icons/mail.svg');
+//       position: absolute;
+//       top: -2px;
+//       left: 0px;
+//     }
+//   }
+//   &__telephone {
+//     margin: 0;
+//     margin-top: 50px;
+//     padding-left: 60px;
+//     &::before {
+//       content: url('../../../assets/icons/phone.svg');
+//       position: absolute;
+//       top: -6px;
+//       left: 0px;
+//     }
+//   }
+//   &__location {
+//     margin-top: 16px;
+//     width: 302px;
+//     height: 234px;
+//   }
 
-  &__location-boston {
-    margin: 0;
-    margin-top: 35px;
-    padding-left: 42px;
-    &::before {
-      content: url('../../../assets/icons/pin.svg');
-      position: absolute;
-      top: 5px;
-      left: 0px;
-    }
-  }
-  &__location-london {
-    margin: 0;
-    margin-top: 36px;
-    padding-left: 42px;
-    &::before {
-      content: url('../../../assets/icons/pin.svg');
-      position: absolute;
-      top: -5px;
-      left: 0px;
-    }
-  }
-  &__puppy {
-    background-image: url('../../../assets/images/footer-puppy.png');
-    width: 300px;
-    height: 310px;
-  }
-}
+//   &__location-boston {
+//     margin: 0;
+//     margin-top: 35px;
+//     padding-left: 42px;
+//     &::before {
+//       content: url('../../../assets/icons/pin.svg');
+//       position: absolute;
+//       top: 5px;
+//       left: 0px;
+//     }
+//   }
+//   &__location-london {
+//     margin: 0;
+//     margin-top: 36px;
+//     padding-left: 42px;
+//     &::before {
+//       content: url('../../../assets/icons/pin.svg');
+//       position: absolute;
+//       top: -5px;
+//       left: 0px;
+//     }
+//   }
+//   &__puppy {
+//     background-image: url('../../../assets/images/footer-puppy.png');
+//     width: 300px;
+//     height: 310px;
+//   }
+// }

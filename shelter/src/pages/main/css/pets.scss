@@ -128,6 +128,7 @@ $primary-hover: #FDDCC4;
     text-align: left;
     color: #000000;
     cursor: pointer;
+    text-decoration: none;
     &:hover {
       background-color: $primary-hover;
       transition: 0.3s ease-in-out;

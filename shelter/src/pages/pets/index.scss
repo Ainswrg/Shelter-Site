@@ -1,0 +1,19 @@
+$color-dark: #545454;
+$color-dark-2: #292929;
+
+
+.header-pets.header-container {
+  padding-top: 30px;
+
+  .header-container__logo-title {
+    color: $color-dark;
+  }
+  .header-container__logo-subtitle {
+    color: $color-dark-2;
+  }
+  .header-container__navbar {
+    a {
+      color: $color-dark;
+    }
+  }
+}
