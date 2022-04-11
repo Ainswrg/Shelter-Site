@@ -28,6 +28,8 @@ $secondary: #f1cdb3;
     padding-top: 180px;
     justify-content: space-between;
     max-width: 1200px;
+    position: static;
+    z-index: 2;
     .content {
       max-width: 460px;
       width: 100%;
