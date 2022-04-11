@@ -1,4 +1,5 @@
-$secondary: #f1cdb3;
+$primary: #f1cdb3;
+$primary-hover: #FDDCC4;
 
 .start-screen {
   background: url('../../../assets/images/start-screen-background.png');
@@ -37,7 +38,7 @@ $secondary: #f1cdb3;
         text-align: left;
       }
       &__button {
-        background-color: $secondary;
+        background-color: $primary;
         display: inline-block;
         margin-top: 26px;
         border-radius: 30px;
@@ -51,7 +52,7 @@ $secondary: #f1cdb3;
         color: #000000;
         cursor: pointer;
         &:hover {
-          background-color: #f6b688;
+          background-color: $primary-hover;
           transition: 0.3s ease-in-out;
         }
       }

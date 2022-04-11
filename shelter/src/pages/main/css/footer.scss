@@ -1,4 +1,4 @@
-$secondary: #f1cdb3;
+$primary: #f1cdb3;
 
 .footer {
   height: 350px;
@@ -37,7 +37,7 @@ $secondary: #f1cdb3;
     position: relative;
 
     a {
-      color: $secondary;
+      color: $primary;
       text-decoration: none;
     }
   }
