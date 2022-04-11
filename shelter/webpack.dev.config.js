@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-undef */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   mode: 'development',
@@ -22,9 +23,16 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/pages/main/index.html',
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, './src/pages/main/index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'second.html',
+      template: path.resolve(__dirname, './src/pages/pets/pets.html'),
+    })
+  ],
   devServer: {
     open: true,
     hot: true,

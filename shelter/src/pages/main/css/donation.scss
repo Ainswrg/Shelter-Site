@@ -1,3 +1,5 @@
+$color-dark: #545454;
+
 .donation {
   height: 462px;
   &__container {
@@ -38,6 +40,8 @@
     margin-top: 20px;
   }
   &__credit-card {
+    color: $color-dark;
+    text-decoration: none;
     margin: 0;
     margin-top: 20px;
     display: flex;

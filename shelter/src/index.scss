@@ -2,6 +2,7 @@ $primary: #f1cdb3;
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -65,6 +66,10 @@ html {
   justify-content: space-between;
   max-width: 1200px;
   width: 100%;
+
+  &__logo {
+    text-decoration: none;
+  }
 
   &__logo-title {
     margin: 0;

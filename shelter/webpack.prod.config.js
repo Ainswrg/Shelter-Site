@@ -23,7 +23,17 @@ module.exports = {
       new CssMinimizerPlugin(),
       new TerserPlugin(),
       new HtmlWebpackPlugin({
+        filename: 'index.html',
         template: path.resolve(__dirname, './src/pages/main/index.html'),
+        minify: {
+          removeAttributeQuotes: true,
+          collapseWhitespace: true,
+          removeComments: true,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'second.html',
+        template: path.resolve(__dirname, './src/pages/pets/pets.html'),
         minify: {
           removeAttributeQuotes: true,
           collapseWhitespace: true,
