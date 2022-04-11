@@ -73,6 +73,7 @@ $primary-active: #f4914a;
         height: 435px;
         background-color: #fff;
         display: grid;
+        cursor: pointer;
         &:hover {
           .card__button {
             transition: 0.3s ease-in-out;

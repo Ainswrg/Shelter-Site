@@ -4,7 +4,7 @@ const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const baseConfig = {
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, './src/index.js'),
   mode: 'development',
   module: {
     rules: [
@@ -14,8 +14,18 @@ const baseConfig = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(?:ico|gif|jpg|mp4)$/i,
+        test: /\.(?:ico|gif|jpg|png|mp4)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[hash].min[ext]',
+        },
+      },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/svg/[hash][ext]',
+        },
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|)$/i,

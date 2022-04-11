@@ -12,6 +12,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            esModule: false,
+          },
+        },
+      },
+      {
         test: /\.s?[ac]ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
