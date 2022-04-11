@@ -3,6 +3,7 @@ $primary-hover: #fddcc4;
 $primary-active: #f4914a;
 $color-dark: #545454;
 $color-dark-2: #292929;
+$color-dark-3: #CDCDCD;
 
 .our-pets {
   height: 1342px + 120px;
@@ -38,7 +39,10 @@ $color-dark-2: #292929;
     }
     .card {
       width: 100%;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
       &:hover {
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         .card__button {
           transition: 0.3s ease-in-out;
           background-color: $primary-hover;
@@ -163,12 +167,9 @@ $color-dark-2: #292929;
       position: relative;
     }
     &__paginator.inactive {
-      border: 1px solid $color-dark;
+      border: 1px solid $color-dark-3;
       color: $color-dark;
-      &:active {
-        background-color: $primary-hover;
-        transition: 0.3s ease-in-out;
-      }
+      pointer-events: none;
     }
     &__paginator.active {
       background-color: $primary;

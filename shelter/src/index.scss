@@ -69,6 +69,9 @@ html {
 
   &__logo {
     text-decoration: none;
+    &:hover {
+      filter: saturate(3);
+    }
   }
 
   &__logo-title {
@@ -183,6 +186,9 @@ $primary: #f1cdb3;
     line-height: 23px;
     letter-spacing: 0.06em;
     position: relative;
+    &:hover {
+      filter: saturate(3);
+    }
 
     a {
       color: $primary;

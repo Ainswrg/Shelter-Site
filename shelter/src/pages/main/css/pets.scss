@@ -74,7 +74,9 @@ $primary-active: #f4914a;
         background-color: #fff;
         display: grid;
         cursor: pointer;
+        transition: 0.3s ease-in-out;
         &:hover {
+          box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
           .card__button {
             transition: 0.3s ease-in-out;
             background-color: $primary-hover;
