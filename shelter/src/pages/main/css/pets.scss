@@ -75,6 +75,7 @@ $primary-active: #f4914a;
         display: grid;
         cursor: pointer;
         transition: 0.3s ease-in-out;
+        border-radius: 12px 12px 0 0;
         &:hover {
           box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
           .card__button {
@@ -94,6 +95,10 @@ $primary-active: #f4914a;
         figure {
           margin: 0;
           height: 300px;
+          border-radius: 12px 12px 0 0;
+          img {
+            border-radius: 12px 12px 0 0;
+          }
         }
         figcaption {
           margin-top: 25px;

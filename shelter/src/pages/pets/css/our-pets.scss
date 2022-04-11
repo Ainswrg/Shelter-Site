@@ -41,6 +41,7 @@ $color-dark-3: #CDCDCD;
       width: 100%;
       cursor: pointer;
       transition: 0.3s ease-in-out;
+      margin-top: 15px;
       &:hover {
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         .card__button {
@@ -60,16 +61,16 @@ $color-dark-3: #CDCDCD;
       figure {
         margin: 0;
         img {
+          border-radius: 12px 12px 0 0;
           cursor: pointer;
           height: 270px;
           width: 270px;
           margin: 0;
-          margin-top: 15px;
           transition: 0.5s ease-in-out;
         }
         figcaption {
           margin: 0;
-          margin-top: 26px;
+          margin-top: 25px;
           display: flex;
           justify-content: center;
           font-family: Georgia;
