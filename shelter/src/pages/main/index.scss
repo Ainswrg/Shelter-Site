@@ -17,6 +17,27 @@ html {
   background-color: #ffffff;
 }
 
+.bg {
+  position: relative;
+  z-index: 0;
+  &::after {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(91, 72, 58, 0.5) 1%,
+        rgba(33, 31, 32, 0.4) 100%
+      )
+      transparent;
+  }
+}
+
 .header {
   display: flex;
   max-height: 120px;

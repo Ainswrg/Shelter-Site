@@ -4,3 +4,4 @@ import './css/about.scss';
 import './css/pets.scss';
 import './css/help.scss';
 import './css/donation.scss';
+import './css/footer.scss';
