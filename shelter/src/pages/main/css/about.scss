@@ -1,4 +1,6 @@
 $primary: #f1cdb3;
+$color-dark: #545454;
+$color-dark-4: #4C4C4C;
 
 .about {
   height: 588px;
@@ -26,7 +28,7 @@ $primary: #f1cdb3;
     letter-spacing: 0.06em;
     text-align: left;
     max-width: 350px;
-
+    color: $color-dark;
   }
   &__subheading {
     max-width: 430px;
@@ -37,5 +39,6 @@ $primary: #f1cdb3;
     line-height: 24px;
     letter-spacing: 0px;
     text-align: left;
+    color: $color-dark-4;
   }
 }

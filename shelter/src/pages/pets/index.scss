@@ -14,6 +14,16 @@ $color-dark-2: #292929;
   .header-container__navbar {
     a {
       color: $color-dark;
+      &:hover:after,
+      &:focus:after {
+        color: $color-dark-2;
+      }
+    }
+    a.active {
+      color: $color-dark-2;
+      &:after {
+        color: #fff;
+      }
     }
   }
 }

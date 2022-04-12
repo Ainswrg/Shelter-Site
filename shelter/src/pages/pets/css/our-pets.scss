@@ -22,6 +22,7 @@ $color-dark-3: #CDCDCD;
     line-height: 45px;
     letter-spacing: 0.06em;
     text-align: center;
+    color: $color-dark;
   }
   .slider {
     margin: 0 auto;
@@ -79,6 +80,7 @@ $color-dark-3: #CDCDCD;
           line-height: 23px;
           letter-spacing: 0.06em;
           text-align: center;
+          color: $color-dark;
         }
       }
       &__button {
@@ -97,7 +99,7 @@ $color-dark-3: #CDCDCD;
         line-height: 22px;
         letter-spacing: 0.06em;
         text-align: left;
-        color: #000000;
+        color: $color-dark-2;
         cursor: pointer;
         text-decoration: none;
         border: 1px solid $primary;
@@ -115,7 +117,7 @@ $color-dark-3: #CDCDCD;
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      border: 1px solid $primary;
+      border: 2px solid $primary;
       display: grid;
       place-content: center;
       cursor: pointer;
@@ -168,7 +170,7 @@ $color-dark-3: #CDCDCD;
       position: relative;
     }
     &__paginator.inactive {
-      border: 1px solid $color-dark-3;
+      border: 2px solid $color-dark-3;
       color: $color-dark;
       pointer-events: none;
     }

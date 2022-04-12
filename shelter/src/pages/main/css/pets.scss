@@ -1,6 +1,8 @@
 $primary: #f1cdb3;
 $primary-hover: #fddcc4;
 $primary-active: #f4914a;
+$color-dark: #545454;
+$color-dark-2: #292929;
 
 .pets {
   height: 877px;
@@ -21,6 +23,7 @@ $primary-active: #f4914a;
     line-height: 45px;
     letter-spacing: 0.06em;
     text-align: center;
+    color: $color-dark;
   }
   .slider {
     margin-top: 60px;
@@ -110,6 +113,7 @@ $primary-active: #f4914a;
           line-height: 23px;
           letter-spacing: 0.06em;
           text-align: center;
+          color: $color-dark;
         }
         &__button {
           display: flex;
@@ -127,7 +131,7 @@ $primary-active: #f4914a;
           line-height: 22px;
           letter-spacing: 0.06em;
           text-align: left;
-          color: #000000;
+          color: $color-dark-2;
           cursor: pointer;
           text-decoration: none;
           border: 1px solid $primary;
@@ -151,7 +155,7 @@ $primary-active: #f4914a;
     line-height: 22px;
     letter-spacing: 0.06em;
     text-align: left;
-    color: #000000;
+    color: $color-dark-2;
     cursor: pointer;
     text-decoration: none;
     &:hover {

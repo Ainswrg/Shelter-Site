@@ -1,4 +1,5 @@
 $primary: #f1cdb3;
+$color-dark-3: #CDCDCD;
 
 html {
   box-sizing: border-box;
@@ -109,7 +110,7 @@ html {
         line-height: 24px;
         font-weight: 400;
         a {
-          color: #ffffff;
+          color: $color-dark-3;
           text-decoration: none;
           cursor: pointer;
           position: relative;
@@ -127,10 +128,12 @@ html {
           &:hover:after,
           &:focus:after {
             width: 100%;
+            color: #fff;
           }
         }
         a.active {
           &:after {
+            color: #fff;
             display: block;
             position: absolute;
             top: 22px;
@@ -147,7 +150,6 @@ html {
   }
 }
 
-$primary: #f1cdb3;
 
 .footer {
   height: 350px;
