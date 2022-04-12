@@ -176,12 +176,7 @@ $color-dark-3: #CDCDCD;
     }
     &__paginator.active {
       background-color: $primary;
-      &:hover {
-        background-color: $primary;
-      }
-      &:active {
-        background-color: $primary;
-      }
+      pointer-events: none;
     }
     &__paginator {
       &:hover {
