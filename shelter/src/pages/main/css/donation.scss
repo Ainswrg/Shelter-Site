@@ -1,27 +1,48 @@
 $color-dark: #545454;
-$color-dark-5: #B2B2B2;
+$color-dark-5: #b2b2b2;
 
 .donation {
-  height: 462px;
+  height: clamp(462px, calc(783px - (783 - 462) * ((100vw - 768px) / (1280 - 768))), 783px);
+  max-width: clamp(768px, calc(1280px + (1280 - 768) * ((100vw - 768px) / (1280 - 768))), 1280px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
   &__container {
     display: grid;
     grid-template-columns: 505px 1fr;
     column-gap: 30px;
-    max-width: 915px;
+    max-width: clamp(505px, calc(505px + (915 - 505) * ((100vw - 768px) / (1280 - 768))), 915px);
+    width: 100%;
+    justify-content: center;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
   }
   &__dog {
     background: url('../../../assets/images/donation-dog.png');
     max-width: 505px;
     height: 261px;
     margin-top: 91px;
+    @media (max-width: 768px) {
+      grid-row: 2;
+      margin-top: 30px;
+    }
   }
   &__content {
     width: 100%;
     height: 282px;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      grid-row: 1;
+      max-width: 380px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
   }
   &__heading {
     margin: 0;
-    margin-top: 80px;
+    margin-top: clamp(80px, calc(82px - (82 - 80) * ((100vw - 768px) / (1280 - 768))), 82px);
     font-family: Georgia;
     font-size: 35px;
     font-weight: 400;
@@ -55,7 +76,7 @@ $color-dark-5: #B2B2B2;
     line-height: 23px;
     letter-spacing: 0.06em;
     text-align: left;
-    width: 289px;
+    width: 350px;
     height: 43px;
     border-radius: 9px;
     padding-left: 60px;
