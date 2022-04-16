@@ -1,17 +1,23 @@
 $color-dark: #545454;
+$itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 'shampoos' 101px,  'vitamins' 89px, 'medicines' 101px, 'collars' 165px, 'sleeping' 143px;
 
 .help {
-  height: 611px;
+  min-height: clamp(611px, calc(779px - (779 - 611) * ((100vw - 768px) / (1280 - 768))), 779px);
+  height: 100%;
+  max-width: clamp(768px, calc(1280px + (1280 - 768) * ((100vw - 768px) / (1280 - 768))), 1280px);;
+  width: 100%;
+  display: flex;
+  space-content: center;
   &__container {
+    margin-top: 80px;
     display: grid;
-    justify-content: center;
+    place-content: center;
     grid-template-rows: 90px 1fr;
-    max-height: 431px;
-    width: 100%;
+    max-height: clamp(431px, calc(599px - (599 - 431) * ((100vw - 768px) / (1280 - 768))), 599px);
+    width: clamp(630px, calc(630px + (1200 - 630) * ((100vw - 768px) / (1280 - 768))), 1200px);
   }
   &__heading {
     margin: 0 auto;
-    margin-top: 80px;
     max-width: 400px;
     font-family: Georgia;
     font-size: 35px;
@@ -23,70 +29,40 @@ $color-dark: #545454;
   }
   &__list {
     display: flex;
-    max-width: 1026px;
-    max-height: 281px;
+    width: 100%;
     list-style: none;
     flex-wrap: wrap;
-    gap: 55px 120px;
-    space-items: center;
+    gap: 55px clamp(60px, calc(60px + (120 - 60) * ((100vw - 768px) / (1280 - 768))), 120px);;
     margin: 0;
-    margin-top: 140px;
+    margin-top: 61px;
     padding: 0;
     justify-content: center;
   }
-  &__item {
-    height: 113px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background-repeat: no-repeat;
-    background-position: center top;
-    &:nth-of-type(1) {
-      background-image: url('../../../assets/icons/petFood.svg');
-      width: 82px;
+
+  @each $name in $itemConfig {
+    &__item-#{nth($name, 1)} {
+      height: 113px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-image: url('../../../assets/icons/#{nth($name, 1)}.svg');
+      width: nth($name, 2);
+      @media (max-width: 768px) {
+        width: 170px;
+      }
     }
-    &:nth-of-type(2) {
-      background-image: url('../../../assets/icons/transportation.svg');
-      width: 150px;
-    }
-    &:nth-of-type(3) {
-      background-image: url('../../../assets/icons/toys.svg');
-      width: 60px;
-    }
-    &:nth-of-type(4) {
-      background-image: url('../../../assets/icons/bowls-and-cups.svg');
-      width: 153px;
-    }
-    &:nth-of-type(5) {
-      background-image: url('../../../assets/icons/shampoos.svg');
-      width: 101px;
-    }
-    &:nth-of-type(6) {
-      background-image: url('../../../assets/icons/vitamins.svg');
-      width: 89px;
-    }
-    &:nth-of-type(7) {
-      background-image: url('../../../assets/icons/medicines.svg');
-      width: 101px;
-    }
-    &:nth-of-type(8) {
-      background-image: url('../../../assets/icons/collars-or-leashes.svg');
-      width: 165px;
-    }
-    &:nth-of-type(9) {
-      background-image: url('../../../assets/icons/sleeping-area.svg');
-      width: 143px;
-    }
-    h4 {
-      margin: 0;
-      width: fit-content;
-      font-family: Georgia;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 23px;
-      letter-spacing: 0.06em;
-      text-align: center;
-      color: $color-dark;
-    }
+  }
+  h4 {
+    margin: 0;
+    width: fit-content;
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: $color-dark;
   }
 }
