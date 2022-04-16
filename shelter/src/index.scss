@@ -80,8 +80,8 @@ html {
 }
 
 .header-container {
-  padding: 0px 40px;
-  padding-top: 60px;
+  padding: 0px clamp(30px, calc(30px + (40 - 30) * ((100vw - 768px) / (1280 - 768))), 40px);
+  padding-top: clamp(30px, calc(30px + (60 - 30) * ((100vw - 768px) / (1280 - 768))), 60px);
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
@@ -93,7 +93,6 @@ html {
       filter: saturate(3);
     }
   }
-
   &__logo-title {
     margin: 0;
     font-family: Georgia;
@@ -106,7 +105,7 @@ html {
   &__logo-subtitle {
     margin: 0;
     margin-left: 4px;
-    margin-top: 10px;
+    margin-top: 11px;
     font-family: Arial;
     font-weight: 400;
     font-size: 13px;
@@ -166,6 +165,11 @@ html {
         }
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 30px;
+    padding-top: 30px;
   }
 }
 
