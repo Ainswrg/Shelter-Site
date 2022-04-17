@@ -4,7 +4,6 @@ $color-dark-2: #292929;
 .header-pets {
   display: flex;
   height: 120px;
-  height: clamp(90px, calc(90px + (120 - 90) * ((100vw - 768px) / (1280 - 768))), 120px);
   align-items: center;
   position: absolute;
   z-index: 2;

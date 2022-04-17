@@ -5,7 +5,8 @@ $color-dark: #545454;
 $color-dark-2: #292929;
 
 .pets {
-  height: 877px;
+  min-height: 877px;
+  max-height: 1300px;
   &__container {
     display: grid;
     justify-content: center;
@@ -15,7 +16,7 @@ $color-dark-2: #292929;
   }
   &__heading {
     margin: 0 auto;
-    margin-top: 82px;
+    margin-top: 81px;
     max-width: 400px;
     font-family: Georgia;
     font-size: 35px;
@@ -32,7 +33,7 @@ $color-dark-2: #292929;
     margin: 0 auto;
     margin-top: 60px;
     background-color: $primary;
-    height: 52px;
+    height: 50px;
     width: 261px;
     border-radius: 100px;
     font-family: Georgia;
@@ -53,7 +54,7 @@ $color-dark-2: #292929;
 
 .slider {
   margin-top: 60px;
-  height: 435px;
+  max-height: fit-content;
   display: grid;
   grid-template-columns: 52px 1fr 52px;
   column-gap: clamp(12px, calc(12px + (53 - 12) * ((100vw - 768px) / (1280 - 768))), 53px);
@@ -61,7 +62,7 @@ $color-dark-2: #292929;
   max-width: 1200px;
   width: 100%;
   align-items: center;
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     column-gap: 12px;
   }
   &__arrow-left,
@@ -69,7 +70,7 @@ $color-dark-2: #292929;
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    border: 1px solid $primary;
+    border: 2px solid $primary;
     position: relative;
     &:hover {
       background-color: $primary-hover;
@@ -82,8 +83,8 @@ $color-dark-2: #292929;
     }
     &:after {
       position: absolute;
-      top: 15px;
-      right: 20px;
+      top: 12px;
+      right: 18px;
     }
   }
   &__arrow-left {
@@ -97,8 +98,10 @@ $color-dark-2: #292929;
     }
   }
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 270px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
     column-gap: clamp(40px, calc(40px + (90 - 40) * ((100vw - 768px) / (1280 - 768))), 90px);
     @media (max-width: 768px) {
       grid-template-columns: repeat(2, 270px);
@@ -114,7 +117,7 @@ $color-dark-2: #292929;
     cursor: pointer;
     transition: 0.3s ease-in-out;
     border-radius: 12px 12px 0 0;
-    @media (max-width: 768px) {
+    @media (max-width: 1218px) {
       &:nth-last-child(1) {
         display: none;
       }
@@ -141,6 +144,11 @@ $color-dark-2: #292929;
       border-radius: 12px 12px 0 0;
       img {
         border-radius: 12px 12px 0 0;
+        cursor: pointer;
+        height: 270px;
+        width: 270px;
+        margin: 0;
+        transition: 0.5s ease-in-out;
       }
     }
     figcaption {
@@ -174,7 +182,7 @@ $color-dark-2: #292929;
       color: $color-dark-2;
       cursor: pointer;
       text-decoration: none;
-      border: 1px solid $primary;
+      border: 2px solid $primary;
     }
   }
 }

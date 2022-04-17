@@ -33,7 +33,6 @@ $color-dark-3: #cdcdcd;
     @media (max-width: 768px) {
     }
     &__heading {
-      margin: 0;
       font-family: Georgia;
       font-size: 44px;
       font-weight: 400;
@@ -53,11 +52,11 @@ $color-dark-3: #cdcdcd;
       color: $color-dark-3;
     }
     &__button {
+      margin-top: 42px;
       width: fit-content;
       text-decoration: none;
       background-color: $primary;
       display: inline-block;
-      margin-top: 26px;
       border-radius: 30px;
       padding: 15px 45px;
       font-family: Georgia;
@@ -78,13 +77,13 @@ $color-dark-3: #cdcdcd;
       }
       @media (max-width: 768px) {
         margin: 0 auto;
-        margin-top: 26px;
+        margin-top: 42px;
       }
     }
   }
   .puppy {
     background-image: url('../../../assets/images/start-screen-puppy.png');
-    background-size: contain;
+    background-repeat: no-repeat;
     margin-left: clamp(0px, calc(139px - (139 - 0) * ((100vw - 768px) / (1280 - 768))), 139px);
     margin-top: clamp(0px, calc(100px - (100 - 0) * ((100vw - 768px) / (1280 - 768))), 100px);;
     width: clamp(569px, calc(569px + (698 - 569) * ((100vw - 768px) / (1280 - 768))), 698px);
@@ -92,6 +91,7 @@ $color-dark-3: #cdcdcd;
     @media (max-width: 768px) {
       width: 569px;
       height: 593px;
+      background-size: contain;
     }
   }
 }

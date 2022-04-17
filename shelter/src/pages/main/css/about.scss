@@ -1,6 +1,6 @@
 $primary: #f1cdb3;
 $color-dark: #545454;
-$color-dark-4: #4C4C4C;
+$color-dark-4: #4c4c4c;
 
 .about {
   max-height: 1048px;
@@ -35,7 +35,6 @@ $color-dark-4: #4C4C4C;
     }
   }
   &__heading {
-    margin: 0;
     font-family: Georgia;
     font-size: 35px;
     font-weight: 400;
@@ -47,7 +46,7 @@ $color-dark-4: #4C4C4C;
   }
   &__subheading {
     max-width: 430px;
-    margin-top: 25px;
+    margin-top: 24px;
     font-family: Arial;
     font-size: 15px;
     font-weight: 400;

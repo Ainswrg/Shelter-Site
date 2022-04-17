@@ -2,46 +2,42 @@ $color-dark: #545454;
 $color-dark-5: #b2b2b2;
 
 .donation {
-  height: clamp(462px, calc(783px - (783 - 462) * ((100vw - 768px) / (1280 - 768))), 783px);
+  min-height: 462px;
   max-width: clamp(768px, calc(1280px + (1280 - 768) * ((100vw - 768px) / (1280 - 768))), 1280px);
   width: 100%;
   display: flex;
   justify-content: center;
   &__container {
-    display: grid;
-    grid-template-columns: 505px 1fr;
+    display: flex;
+    flex-wrap: wrap;
     column-gap: 30px;
-    max-width: clamp(505px, calc(505px + (915 - 505) * ((100vw - 768px) / (1280 - 768))), 915px);
     width: 100%;
     justify-content: center;
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
   }
   &__dog {
     background: url('../../../assets/images/donation-dog.png');
     max-width: 505px;
     height: 261px;
+    width: 90%;
+    margin-left: 0px;
     margin-top: 91px;
+    @media (max-width: 954px) {
+      order: 1;
+      margin-bottom: 100px;
+    }
     @media (max-width: 768px) {
-      grid-row: 2;
-      margin-top: 30px;
+      margin-top: 141px;
     }
   }
   &__content {
-    width: 100%;
+    width: 380px;
     height: 282px;
-    margin: 0 auto;
     @media (max-width: 768px) {
-      grid-row: 1;
+      margin-left: 0px;
       max-width: 380px;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
     }
   }
   &__heading {
-    margin: 0;
     margin-top: clamp(80px, calc(82px - (82 - 80) * ((100vw - 768px) / (1280 - 768))), 82px);
     font-family: Georgia;
     font-size: 35px;
@@ -53,14 +49,13 @@ $color-dark-5: #b2b2b2;
     color: $color-dark;
   }
   &__subheading {
-    margin: 0;
     font-family: Georgia;
     font-size: 15px;
     font-weight: 400;
     line-height: 17px;
     letter-spacing: 0.06em;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 18px;
     color: $color-dark;
   }
   &__credit-card {

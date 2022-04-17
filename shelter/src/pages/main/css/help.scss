@@ -1,10 +1,11 @@
 $color-dark: #545454;
-$itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 'shampoos' 101px,  'vitamins' 89px, 'medicines' 101px, 'collars' 165px, 'sleeping' 143px;
+$itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 'shampoos' 101px, 'vitamins' 89px,
+  'medicines' 101px, 'collars' 165px, 'sleeping' 143px;
 
 .help {
   min-height: clamp(611px, calc(779px - (779 - 611) * ((100vw - 768px) / (1280 - 768))), 779px);
   height: 100%;
-  max-width: clamp(768px, calc(1280px + (1280 - 768) * ((100vw - 768px) / (1280 - 768))), 1280px);;
+  max-width: clamp(768px, calc(1280px + (1280 - 768) * ((100vw - 768px) / (1280 - 768))), 1280px);
   width: 100%;
   display: flex;
   space-content: center;
@@ -32,7 +33,7 @@ $itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 's
     width: 100%;
     list-style: none;
     flex-wrap: wrap;
-    gap: 55px clamp(60px, calc(60px + (120 - 60) * ((100vw - 768px) / (1280 - 768))), 120px);;
+    gap: 55px clamp(60px, calc(60px + (120 - 60) * ((100vw - 768px) / (1280 - 768))), 120px);
     margin: 0;
     margin-top: 61px;
     padding: 0;
