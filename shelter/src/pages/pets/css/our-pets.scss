@@ -3,18 +3,26 @@ $primary-hover: #fddcc4;
 $primary-active: #f4914a;
 $color-dark: #545454;
 $color-dark-2: #292929;
-$color-dark-3: #CDCDCD;
+$color-dark-3: #cdcdcd;
+$paginatorConfig: 'left2' 4px, 'left1' 11px, 'right1' 13px, 'right2' 5px;
 
 .our-pets {
-  height: 1342px + 120px;
-  width: 1280px;
+  min-height: 1342px + 120px;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
   &__container {
-    height: 1162px;
-    width: 1200px;
+    margin-top: 80px;
+    min-height: 1162px;
+    max-width: 1200px;
+    @media (max-width: 768px) {
+      margin-top: 190px;
+    }
   }
   &__heading {
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 10px;
     max-width: 400px;
     font-family: Georgia;
     font-size: 35px;
@@ -24,25 +32,39 @@ $color-dark-3: #CDCDCD;
     text-align: center;
     color: $color-dark;
   }
-  .slider {
+  .slider-pet {
     margin: 0 auto;
-    margin-top: 45px;
-    width: 1200px;
-    height: 1227px;
+    margin-top: clamp(20px, calc(20px + (50 - 20) * ((100vw - 768px) / (1280 - 768))), 50px);
+    margin-bottom: clamp(0px, calc(76px - (76 - 0) * ((100vw - 768px) / (1280 - 768))), 76px);
+    max-width: 1200px;
     display: grid;
-    grid-template-rows: 930px 52px;
-    row-gap: 45px;
+    grid-template-rows: 1fr 52px;
+    grid-template-columns: 1fr;
+    row-gap: clamp(40px, calc(40px + (45 - 40) * ((100vw - 768px) / (1280 - 768))), 45px);
+    @media (max-width: 768px) {
+    }
     &__cards {
-      display: grid;
+      margin-top: 10px;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
       grid-template-columns: repeat(4, 270px);
       grid-template-rows: repeat(2, 435px);
       grid-gap: 30px 40px;
+      justify-content: center;
     }
     .card {
-      width: 100%;
+      width: 270px;
+      height: 435px;
       cursor: pointer;
       transition: 0.3s ease-in-out;
-      margin-top: 15px;
+      margin-top: 0px;
+      @media (max-width: 1239px) {
+        &:nth-last-child(1),
+        &:nth-last-child(2) {
+          display: none;
+        }
+      }
       &:hover {
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         .card__button {
@@ -61,6 +83,8 @@ $color-dark-3: #CDCDCD;
       }
       figure {
         margin: 0;
+        height: 323px;
+        border-radius: 12px 12px 0 0;
         img {
           border-radius: 12px 12px 0 0;
           cursor: pointer;
@@ -70,8 +94,9 @@ $color-dark-3: #CDCDCD;
           transition: 0.5s ease-in-out;
         }
         figcaption {
+          height: 23px;
           margin: 0;
-          margin-top: 25px;
+          margin-top: 26px;
           display: flex;
           justify-content: center;
           font-family: Georgia;
@@ -88,7 +113,7 @@ $color-dark-3: #CDCDCD;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        margin-top: 30px;
+        margin-top: 31px;
         background-color: transparent;
         height: 50px;
         width: 185px;
@@ -102,63 +127,66 @@ $color-dark-3: #CDCDCD;
         color: $color-dark-2;
         cursor: pointer;
         text-decoration: none;
-        border: 1px solid $primary;
+        border: 2px solid $primary;
       }
     }
     &__navigation {
       margin: 0 auto;
+      margin-top: clamp(0px, calc(0px + (15 - 0) * ((100vw - 768px) / (1280 - 768))), 15px);
       width: 340px;
       height: 52px;
       list-style: none;
       display: flex;
       gap: 0 20px;
+      @media (max-width: 768px) {
+      }
     }
-    &__paginator {
+    &__paginator-number {
       width: 52px;
       height: 52px;
       border-radius: 50%;
       border: 2px solid $primary;
       display: grid;
-      place-content: center;
+      align-items: center;
       cursor: pointer;
-      &:nth-child(1) {
-        position: relative;
-        &::after {
-          position: absolute;
-          content: url('../../../assets/icons/left2.svg');
-          top: 18px;
-          left: 10px;
-        }
+      background-color: $primary;
+      pointer-events: none;
+    }
+    @each $name in $paginatorConfig {
+      &__paginator-#{nth($name, 1)}.inactive {
+        border: 2px solid $color-dark-3;
+        color: $color-dark;
+        pointer-events: none;
       }
-      &:nth-child(2) {
-        position: relative;
-        &::after {
-          position: absolute;
-          content: url('../../../assets/icons/left1.svg');
-          top: 18px;
-          left: 19px;
+      &__paginator-#{nth($name, 1)} {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid $primary;
+        display: grid;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          background-color: $primary-hover;
         }
-      }
-      &:nth-child(4) {
-        position: relative;
-        &::after {
-          position: absolute;
-          content: url('../../../assets/icons/right1.svg');
-          top: 18px;
-          left: 20px;
+        &:active {
+          background-color: $primary-active;
+          transition: 0.3s ease-in-out;
         }
-      }
-      &:nth-child(5) {
-        position: relative;
-        &::after {
-          position: absolute;
-          content: url('../../../assets/icons/right2.svg');
-          top: 18px;
-          left: 13px;
+        h4 {
+          &::after {
+            position: absolute;
+            content: url('../../../assets/icons/#{nth($name, 1)}.svg');
+            top: -12px;
+            left: nth($name, 2);
+          }
         }
       }
     }
     &__button {
+      margin: 0;
+      display: flex;
+      justify-content: center;
       font-family: Georgia;
       font-size: 20px;
       font-weight: 400;
@@ -168,24 +196,6 @@ $color-dark-3: #CDCDCD;
       color: $color-dark-2;
       transition: 0.3s ease-in-out;
       position: relative;
-    }
-    &__paginator.inactive {
-      border: 2px solid $color-dark-3;
-      color: $color-dark;
-      pointer-events: none;
-    }
-    &__paginator.active {
-      background-color: $primary;
-      pointer-events: none;
-    }
-    &__paginator {
-      &:hover {
-        background-color: $primary-hover;
-      }
-      &:active {
-        background-color: $primary-active;
-        transition: 0.3s ease-in-out;
-      }
     }
   }
 }
