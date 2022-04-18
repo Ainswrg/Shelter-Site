@@ -1,11 +1,10 @@
-$primary: #f1cdb3;
-$primary-hover: #fddcc4;
-$primary-active: #f4914a;
-$color-dark: #545454;
-$color-dark-2: #292929;
+@import '../../../settings';
 
 .pets {
   min-height: 877px;
+  @media (max-width: 768px) {
+    min-height: clamp(791px, calc(791px + (877 - 791) * ((100vw - 320px) / (768 - 320))), 877px);
+  }
   max-height: 1300px;
   &__container {
     display: grid;
@@ -13,6 +12,9 @@ $color-dark-2: #292929;
     grid-template-rows: repeat(3, 1fr);
     width: 100%;
     max-height: 697px;
+    @media (max-width: 320px) {
+      max-width: 300px;
+    }
   }
   &__heading {
     margin: 0 auto;
@@ -25,13 +27,19 @@ $color-dark-2: #292929;
     letter-spacing: 0.06em;
     text-align: center;
     color: $color-dark;
+    @media (max-width: 768px) {
+      max-width: clamp(300px, calc(300px + (400 - 300) * ((100vw - 320px) / (768 - 320))), 400px);
+      font-size: clamp(25px, calc(25px + (35 - 25) * ((100vw - 320px) / (768 - 320))), 35px);
+      line-height: clamp(32px, calc(32px + (45 - 32) * ((100vw - 320px) / (768 - 320))), 45px);
+      margin-top: clamp(42px, calc(42px + (81 - 42) * ((100vw - 320px) / (768 - 320))), 81px);
+    }
   }
   &__button {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: clamp(42px, calc(42px + (60 - 42) * ((100vw - 320px) / (768 - 320))), 60px);
     background-color: $primary;
     height: 50px;
     width: 261px;
@@ -53,7 +61,7 @@ $color-dark-2: #292929;
 }
 
 .slider {
-  margin-top: 60px;
+  margin-top: clamp(42px, calc(42px + (60 - 42) * ((100vw - 320px) / (768 - 320))), 60px);
   max-height: fit-content;
   display: grid;
   grid-template-columns: 52px 1fr 52px;
@@ -62,41 +70,47 @@ $color-dark-2: #292929;
   max-width: 1200px;
   width: 100%;
   align-items: center;
-  @media (max-width: 768px) {
-    column-gap: 12px;
+  @media (max-width: 320px) {
+    grid-template-rows: 1fr 72px;
   }
-  &__arrow-left,
-  &__arrow-right {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    border: 2px solid $primary;
-    position: relative;
-    &:hover {
-      background-color: $primary-hover;
-      transition: 0.3s ease-in-out;
-      cursor: pointer;
-    }
-    &:active {
-      background-color: $primary-active;
-      transition: 0.3s ease-in-out;
-    }
-    &:after {
-      position: absolute;
-      top: 12px;
-      right: 18px;
+  @each $name in $arrowBtnConfig {
+    &__arrow-#{nth($name, 1)} {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid $primary;
+      position: relative;
+      @media (max-width: 767px) {
+        grid-row: 2;
+        grid-column: 1/4;
+        margin: 0 auto;
+        margin-top: 20px;
+        @if nth($name, 1) == 'right' {
+          margin-right: nth($name, 2);
+        } @else {
+          margin-left: nth($name, 2);
+        }
+      }
+      &:hover {
+        background-color: $primary-hover;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      &:active {
+        background-color: $primary-active;
+        transition: 0.3s ease-in-out;
+      }
+      &:after {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+      }
+      &:after {
+        content: url('../../../assets/icons/Arrow-#{nth($name, 1)}.svg');
+      }
     }
   }
-  &__arrow-left {
-    &:after {
-      content: url('../../../assets/icons/Arrow-left.svg');
-    }
-  }
-  &__arrow-right {
-    &:after {
-      content: url('../../../assets/icons/Arrow-right.svg');
-    }
-  }
+
   &__cards {
     display: flex;
     flex-wrap: wrap;
@@ -105,8 +119,11 @@ $color-dark-2: #292929;
     column-gap: clamp(40px, calc(40px + (90 - 40) * ((100vw - 768px) / (1280 - 768))), 90px);
     @media (max-width: 768px) {
       grid-template-columns: repeat(2, 270px);
-      column-gap: 40px;
-      margin: 0 auto;
+      column-gap: clamp(0px, calc(0px + (40 - 0) * ((100vw - 320px) / (768 - 320))), 40px);
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      grid-column: 1/4;
     }
   }
   .card {
@@ -117,8 +134,13 @@ $color-dark-2: #292929;
     cursor: pointer;
     transition: 0.3s ease-in-out;
     border-radius: 12px 12px 0 0;
-    @media (max-width: 1218px) {
+    @media (max-width: 1279px) {
       &:nth-last-child(1) {
+        display: none;
+      }
+    }
+    @media (max-width: 767px) {
+      &:nth-last-child(2) {
         display: none;
       }
     }
