@@ -1,29 +1,28 @@
-$color-dark: #545454;
-$itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 'shampoos' 101px, 'vitamins' 89px,
-  'medicines' 101px, 'collars' 165px, 'sleeping' 143px;
+@import '../../../settings';
 
 .help {
-  min-height: clamp(611px, calc(779px - (779 - 611) * ((100vw - 768px) / (1280 - 768))), 779px);
   height: 100%;
-  max-width: clamp(768px, calc(1280px + (1280 - 768) * ((100vw - 768px) / (1280 - 768))), 1280px);
   width: 100%;
   display: flex;
-  space-content: center;
+  @media (max-width: 320px) {
+    min-height: 745px;
+  }
   &__container {
-    margin-top: 80px;
-    display: grid;
-    place-content: center;
-    grid-template-rows: 90px 1fr;
-    max-height: clamp(431px, calc(599px - (599 - 431) * ((100vw - 768px) / (1280 - 768))), 599px);
+    margin-top: clamp(42px, calc(42px + (80 - 42) * ((100vw - 320px) / (768 - 320))), 80px);
     width: clamp(630px, calc(630px + (1200 - 630) * ((100vw - 768px) / (1280 - 768))), 1200px);
+    height: fit-content;
+    margin-bottom: 100px;
+    @media (max-width: 320px) {
+      margin-bottom: 42px;
+    }
   }
   &__heading {
     margin: 0 auto;
     max-width: 400px;
     font-family: Georgia;
-    font-size: 35px;
+    font-size: clamp(25px, calc(25px + (35 - 25) * ((100vw - 320px) / (768 - 320))), 35px);
+    line-height: clamp(32px, calc(32px + (45 - 32) * ((100vw - 320px) / (768 - 320))), 45px);
     font-weight: 400;
-    line-height: 45px;
     letter-spacing: 0.06em;
     text-align: center;
     color: $color-dark;
@@ -34,10 +33,24 @@ $itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 's
     list-style: none;
     flex-wrap: wrap;
     gap: 55px clamp(60px, calc(60px + (120 - 60) * ((100vw - 768px) / (1280 - 768))), 120px);
-    margin: 0;
-    margin-top: 61px;
+    margin-top: clamp(41px, calc(41px + (61 - 41) * ((100vw - 320px) / (768 - 320))), 61px);
     padding: 0;
     justify-content: center;
+    @media (max-width: 1279px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: clamp(30px, calc(30px + (55 - 30) * ((100vw - 320px) / (768 - 320))), 55px);
+      column-gap: clamp(30px, calc(30px + (60 - 30) * ((100vw - 320px) / (768 - 320))), 60px);
+      justify-items: center;
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      padding: 0 5px;
+      gap: 30px;
+      justify-content: flex-start;
+    }
   }
 
   @each $name in $itemConfig {
@@ -46,12 +59,22 @@ $itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 's
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      background-repeat: no-repeat;
-      background-position: center top;
-      background-image: url('../../../assets/icons/#{nth($name, 1)}.svg');
+      position: relative;
       width: nth($name, 2);
-      @media (max-width: 768px) {
-        width: 170px;
+      &::after {
+        position: absolute;
+        content: '';
+        background-image: url('../../../assets/icons/#{nth($name, 1)}.svg');
+        background-repeat: no-repeat;
+        background-position: center top;
+        top: 0;
+        width: 100%;
+        height: clamp(50px, calc(50px + (60 - 50) * ((100vw - 320px) / (768 - 320))), 60px);
+        background-size: contain;
+      }
+      @media (max-width: 1279px) {
+        width: clamp(130px, calc(130px + (170 - 130) * ((100vw - 350px) / (768 - 350))), 170px);
+        height: clamp(87px, calc(87px + (113 - 87) * ((100vw - 350px) / (768 - 350))), 113px);
       }
     }
   }
@@ -59,9 +82,9 @@ $itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 's
     margin: 0;
     width: fit-content;
     font-family: Georgia;
-    font-size: 20px;
+    font-size: clamp(15px, calc(15px + (20 - 15) * ((100vw - 320px) / (768 - 320))), 20px);
+    line-height: clamp(17px, calc(17px + (23 - 17) * ((100vw - 320px) / (768 - 320))), 23px);
     font-weight: 400;
-    line-height: 23px;
     letter-spacing: 0.06em;
     text-align: center;
     color: $color-dark;
