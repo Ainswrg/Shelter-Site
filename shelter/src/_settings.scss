@@ -1,0 +1,30 @@
+$primary: #f1cdb3;
+$color-dark: #545454;
+$color-dark-2: #292929;
+$color-dark-3: #cdcdcd;
+$color-dark-4: #4c4c4c;
+$color-dark-5: #b2b2b2;
+$primary-hover: #fddcc4;
+$primary-active: #f4914a;
+$transition: 0.5s ease-in-out;
+$paginatorConfig: 'left2' 11px, 'left1' 18px, 'right1' 18px, 'right2' 11px;
+$arrowBtnConfig: 'left' 56px, 'right' 56px;
+$itemConfig: 'food' 82px, 'transportation' 150px, 'toys' 60px, 'bowls' 153px, 'shampoos' 101px, 'vitamins' 89px,
+  'medicines' 101px, 'collars' 165px, 'sleeping' 143px;
+$footerConfig: 'contacts' 278px 1, 'location' 302px 2;
+$footerListConfig: 'mail' 'mail' 44px 60px -2px 14px, 'telephone' 'phone' 49px 60px -6px 20px,
+  'boston' 'pin' 33px 42px 5px 0px, 'london' 'pin' 38px 42px -5px 0px;
+@mixin font($ff, $fz, $lh, $fw, $ls) {
+  font-family: $ff;
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: $fw;
+  letter-spacing: $ls;
+}
+@mixin icon {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  transition: all 0.3s ease 0s;
+}
