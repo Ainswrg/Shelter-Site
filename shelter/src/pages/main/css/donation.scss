@@ -1,9 +1,8 @@
-$color-dark: #545454;
-$color-dark-5: #b2b2b2;
+@import '../../../settings';
 
 .donation {
   min-height: 462px;
-  max-width: clamp(768px, calc(1280px + (1280 - 768) * ((100vw - 768px) / (1280 - 768))), 1280px);
+  max-width: clamp(768px, calc(768px + (1280 - 768) * ((100vw - 768px) / (1280 - 768))), 1280px);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -13,6 +12,9 @@ $color-dark-5: #b2b2b2;
     column-gap: 30px;
     width: 100%;
     justify-content: center;
+    @media (max-width: 1279px) {
+      display: grid;
+    }
   }
   &__dog {
     background: url('../../../assets/images/donation-dog.png');
@@ -20,43 +22,58 @@ $color-dark-5: #b2b2b2;
     height: 261px;
     width: 90%;
     margin-left: 0px;
-    margin-top: 91px;
-    @media (max-width: 954px) {
+    margin-top: 92px;
+    @media (max-width: 1279px) {
       order: 1;
-      margin-bottom: 100px;
-    }
-    @media (max-width: 768px) {
-      margin-top: 141px;
+      margin: 0 auto;
+      margin-top: clamp(42px, calc(42px + (59 - 42) * ((100vw - 320px) / (768 - 320))), 59px);
+      margin-bottom: clamp(42px, calc(42px + (100 - 42) * ((100vw - 320px) / (768 - 320))), 100px);
+      width: clamp(260px, calc(260px + (505 - 260) * ((100vw - 320px) / (768 - 320))), 505px);
+      height: clamp(135px, calc(135px + (261 - 135) * ((100vw - 320px) / (768 - 320))), 261px);
+      background-size: cover;
     }
   }
   &__content {
-    width: 380px;
-    height: 282px;
-    @media (max-width: 768px) {
-      margin-left: 0px;
-      max-width: 380px;
+    margin-top: clamp(80px, calc(82px - (82 - 80) * ((100vw - 768px) / (1280 - 768))), 82px);
+    max-width: 380px;
+    width: 100%;
+    height: fit-content;
+    @media (max-width: 1279px) {
+      margin: 0 auto;
+      margin-top: clamp(42px, calc(42px + (80 - 42) * ((100vw - 320px) / (768 - 320))), 80px);
+    }
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
   &__heading {
-    margin-top: clamp(80px, calc(82px - (82 - 80) * ((100vw - 768px) / (1280 - 768))), 82px);
     font-family: Georgia;
-    font-size: 35px;
+    font-size: clamp(25px, calc(25px + (35 - 25) * ((100vw - 320px) / (768 - 320))), 35px);
     font-weight: 400;
-    line-height: 45px;
+    line-height: clamp(32px, calc(32px + (45 - 32) * ((100vw - 320px) / (768 - 320))), 45px);
     letter-spacing: 0.06em;
     text-align: left;
     max-width: 300px;
     color: $color-dark;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
   }
   &__subheading {
+    margin-top: clamp(18px, calc(22px - (22 - 18) * ((100vw - 320px) / (768 - 320))), 22px);
     font-family: Georgia;
     font-size: 15px;
     font-weight: 400;
-    line-height: 17px;
-    letter-spacing: 0.06em;
+    line-height: clamp(19px, calc(20px - (20 - 19) * ((100vw - 320px) / (768 - 320))), 20px);
+    letter-spacing: clamp(0px, calc(0px + (0.9 - 0) * ((100vw - 320px) / (768 - 320))), 0.9px);
     text-align: left;
-    margin-top: 18px;
     color: $color-dark;
+    @media (max-width: 767px) {
+      letter-spacing: 0px;
+      text-align: center;
+    }
   }
   &__credit-card {
     color: $color-dark;
@@ -66,17 +83,21 @@ $color-dark-5: #b2b2b2;
     display: flex;
     align-items: center;
     font-family: Georgia;
-    font-size: 20px;
+    font-size: clamp(15px, calc(15px + (20 - 15) * ((100vw - 320px) / (768 - 320))), 20px);
     font-weight: 400;
-    line-height: 23px;
+    line-height: clamp(17px, calc(17px + (23 - 17) * ((100vw - 320px) / (768 - 320))), 23px);
     letter-spacing: 0.06em;
     text-align: left;
-    width: 350px;
+    width: clamp(280px, calc(280px + (350 - 280) * ((100vw - 320px) / (768 - 320))), 350px);
     height: 43px;
     border-radius: 9px;
     padding-left: 60px;
     position: relative;
     background-color: #f1cdb3;
+    @media (max-width: 767px) {
+      margin: 0 auto;
+      margin-top: 22px;
+    }
     &::before {
       content: url('../../../assets/icons/credit-card.svg');
       position: absolute;
@@ -95,5 +116,11 @@ $color-dark-5: #b2b2b2;
     text-align: left;
     max-width: 380px;
     color: $color-dark-5;
+    @media (max-width: 767px) {
+      font-size: 12px;
+      line-height: 18px;
+      text-align: justify;
+      padding: 0 10px;
+    }
   }
 }
