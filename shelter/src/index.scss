@@ -78,9 +78,7 @@ html {
     @if $header == 'pets' {
       height: 120px;
       background: #fff;
-      @media (max-width: 767px) {
-        position: fixed;
-      }
+      position: fixed;
     }
   }
   .header-container {
