@@ -1,9 +1,11 @@
 $primary: #f1cdb3;
+$color-light: #FAFAFA;
+$color-light-2: #cdcdcd;
+$color-light-3: #b2b2b2;
+$color-light-4: #f6f6f6;
 $color-dark: #545454;
 $color-dark-2: #292929;
-$color-dark-3: #cdcdcd;
-$color-dark-4: #4c4c4c;
-$color-dark-5: #b2b2b2;
+$color-dark-3: #4c4c4c;
 $primary-hover: #fddcc4;
 $primary-active: #f4914a;
 $transition: 0.5s ease-in-out;
@@ -27,4 +29,26 @@ $footerListConfig: 'mail' 'mail' 44px 60px -2px 14px, 'telephone' 'phone' 49px 6
   width: 30px;
   height: 2px;
   transition: all 0.3s ease 0s;
+}
+@mixin navLink($color: $color-light-2, $top: 22px, $height: 3px) {
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  color: $color;
+  &:after {
+    display: block;
+    position: absolute;
+    top: $top;
+    left: 0;
+    width: 0;
+    height: $height;
+    background-color: $primary;
+    content: '';
+    transition: width 0.3s ease-out;
+  }
+  &:hover:after,
+  &:focus:after {
+    width: 100%;
+    color: #ffffff;
+  }
 }

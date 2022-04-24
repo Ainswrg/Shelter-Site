@@ -1,22 +1,22 @@
-@import '../../../settings';
+@import '../../../_settings';
 
 .our-pets {
-  min-height: 1342px + 120px;
   max-width: 1280px;
   display: flex;
   align-items: center;
   margin: 0 auto;
+  background-color: $color-light-4;
   &__container {
     margin-top: 80px;
     min-height: 1162px;
     max-width: 1200px;
     @media (max-width: 1279px) {
-      margin-top: clamp(152px, calc(152px + (190 - 152) * ((100vw - 320px) / (768 - 320))), 190px);
+      margin-top: clamp(42px, calc(42px + (82 - 42) * ((100vw - 320px) / (768 - 320))), 82px);
     }
   }
   &__heading {
     margin: 0 auto;
-    margin-top: 10px;
+    // margin-top: 10px;
     max-width: 400px;
     @include font(Georgia, 35px, 45px, 400, 0.06em);
     text-align: center;
@@ -29,15 +29,19 @@
   .slider-pet {
     margin: 0 auto;
     margin-top: clamp(20px, calc(20px + (50 - 20) * ((100vw - 768px) / (1280 - 768))), 50px);
-    margin-bottom: clamp(0px, calc(76px - (76 - 0) * ((100vw - 768px) / (1280 - 768))), 76px);
+    margin-bottom: clamp(0px, calc(0px + (100 - 0) * ((100vw - 768px) / (1280 - 768))), 100px);
     max-width: 1200px;
     display: grid;
     grid-template-rows: 1fr 52px;
     grid-template-columns: 1fr;
-    row-gap: clamp(40px, calc(40px + (45 - 40) * ((100vw - 768px) / (1280 - 768))), 45px);
+    row-gap: clamp(38px, calc(38px + (60 - 38) * ((100vw - 768px) / (1280 - 768))), 60px);
     @media (max-width: 1279px) {
+      row-gap: 38px;
       margin-top: clamp(20px, calc(32px - (32 - 20) * ((100vw - 320px) / (768 - 320))), 32px);
       margin-bottom: clamp(43px, calc(43px + (76 - 43) * ((100vw - 320px) / (768 - 320))), 76px);
+    }
+    @media (max-width: 767px) {
+      row-gap: 42px;
     }
     &__cards {
       margin-top: 10px;
@@ -138,7 +142,7 @@
     }
     &__navigation {
       margin: 0 auto;
-      margin-top: clamp(0px, calc(0px + (15 - 0) * ((100vw - 768px) / (1280 - 768))), 15px);
+      // margin-top: clamp(0px, calc(0px + (15 - 0) * ((100vw - 768px) / (1280 - 768))), 15px);
       width: fit-content;
       height: 52px;
       list-style: none;
@@ -164,7 +168,7 @@
     }
     @each $name in $paginatorConfig {
       &__paginator-#{nth($name, 1)}.inactive {
-        border: 2px solid $color-dark-3;
+        border: 2px solid $color-light-2;
         color: $color-dark;
         pointer-events: none;
       }
