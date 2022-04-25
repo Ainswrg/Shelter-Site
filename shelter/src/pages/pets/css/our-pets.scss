@@ -16,7 +16,6 @@
   }
   &__heading {
     margin: 0 auto;
-    // margin-top: 10px;
     max-width: 400px;
     @include font(Georgia, 35px, 45px, 400, 0.06em);
     text-align: center;
@@ -142,7 +141,6 @@
     }
     &__navigation {
       margin: 0 auto;
-      // margin-top: clamp(0px, calc(0px + (15 - 0) * ((100vw - 768px) / (1280 - 768))), 15px);
       width: fit-content;
       height: 52px;
       list-style: none;
@@ -184,7 +182,7 @@
         h4 {
           &::after {
             position: absolute;
-            content: url('../../../assets/icons/#{nth($name, 1)}.svg');
+            content: url('./assets/icons/#{nth($name, 1)}.svg');
             top: -12px;
             left: nth($name, 2);
           }

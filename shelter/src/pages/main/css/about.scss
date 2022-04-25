@@ -1,4 +1,4 @@
-@import '../../../_settings';
+// @import './_settings';
 
 .about {
   max-height: 1048px;
@@ -21,7 +21,7 @@
     }
   }
   &__pets {
-    background: url('../../../assets/images/about-pets.png') no-repeat center center;
+    background: url('./assets/images/about-pets.png') no-repeat center center;
     margin-top: 80px;
     margin-left: clamp(0px, calc(67px - (67 - 0) * ((100vw - 768px) / (1280 - 768))), 67px);
     max-width: 300px;

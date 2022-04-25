@@ -17,9 +17,12 @@
   src: url('./assets/fonts/georgia.ttf');
 }
 @import './_settings';
+@import './pages/pets/index.scss';
+@import './pages/main/index.scss';
 @import './pages/css/header.scss';
 @import './pages/css/footer.scss';
 @import './pages/css/menu.scss';
+@import './pages/css/modal.scss';
 
 *,
 *::before,
