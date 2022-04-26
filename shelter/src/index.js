@@ -10,15 +10,23 @@ import { Card } from './js/Card';
 import { CardModule } from './js/CardModule';
 
 const dataCards = getData();
+const dataForMain1 = [];
+const mixRandom = () => {
+  return Math.random() - 0.5;
+};
+for (let i = 0; i < 6; i++) {
+  dataForMain1.push(...dataCards.sort(mixRandom));
+}
+
 const mainPage = document.querySelector('#main-page');
 const petsPage = document.querySelector('#pets-page');
 
 window.onload = () => {
   console.log('Complete');
   //render card
-  if (dataCards) {
+  if (dataForMain1) {
     renderDataToDom();
-    console.log(dataCards);
+    // console.log(dataForMain1);
   }
   if (mainPage) {
     console.log(mainPage);
@@ -37,7 +45,7 @@ window.onload = () => {
 
 function renderDataToDom() {
   const cardsWrapper = getCardsWrapper();
-  generateCards(dataCards).forEach((card) => {
+  generateCards(dataForMain1).forEach((card) => {
     cardsWrapper.append(card.generateCard());
     console.log('generate');
   });
@@ -88,7 +96,7 @@ function addCardClickerHandler() {
 }
 
 function getClickedData(name) {
-  return dataCards.find((card) => card.name == name);
+  return dataForMain1.find((card) => card.name == name);
 }
 
 function renderCardModalWindow(card) {
