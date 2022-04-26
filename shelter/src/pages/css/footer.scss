@@ -15,7 +15,6 @@
     min-height: 310px;
     padding-top: clamp(15px, calc(15px + (40 - 15) * ((100vw - 768px) / (1280 - 768))), 40px);
     position: relative;
-    z-index: 2;
     row-gap: clamp(0px, calc(65px - (65 - 0) * ((100vw - 1149px) / (1280 - 1149))), 65px);
     @media (max-width: 1279px) {
       column-gap: 161px;

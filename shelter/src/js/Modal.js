@@ -68,7 +68,10 @@ export class Modal {
   closeModal(e) {
     const classes = e.target.classList;
     if (classes.contains('overlay') || classes.contains('modal__close-icon') || classes.contains('svg-icon')) {
-      document.querySelector('.overlay').remove();
+      if (document.querySelector('.overlay')) {
+        document.querySelector('.overlay').remove();
+      }
+
       document.body.style.overflow = 'visible';
     }
   }

@@ -3,9 +3,10 @@
 import Swiper, { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const SwiperMain = () => {
-  new Swiper('.slider__cards', {
+  const swiperMain = new Swiper('.slider__cards', {
     modules: [Navigation],
 
     on: {
@@ -13,8 +14,6 @@ const SwiperMain = () => {
         console.log('initialized');
       },
     },
-
-    loop: true,
     navigation: {
       nextEl: '.slider__arrow-right',
       prevEl: '.slider__arrow-left',
@@ -34,4 +33,5 @@ const SwiperMain = () => {
     },
   });
 };
+
 export default SwiperMain;

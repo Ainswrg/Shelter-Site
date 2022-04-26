@@ -128,3 +128,30 @@
     }
   }
 }
+.navigation-menu.pets {
+  z-index: 1;
+  .navigation-menu__container {
+    position: fixed;
+    background: #fff;
+    ul {
+      li {
+        a {
+          @include navLink($color-dark, 45px);
+        }
+        a.active {
+          &:after {
+            display: block;
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $primary;
+            content: '';
+            transition: width 0.3s ease-out;
+          }
+        }
+      }
+    }
+  }
+}

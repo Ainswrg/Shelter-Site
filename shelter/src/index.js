@@ -3,12 +3,15 @@ import 'normalize.css';
 import './index.scss';
 import './pages/main/index';
 import './js';
-import { SwiperMain } from './js';
+import { SwiperMain, SwiperPets } from './js';
 import getData from './js/carouselData';
+// import { Modal } from './js/Modal';
 import { Card } from './js/Card';
 import { CardModule } from './js/CardModule';
 
 const dataCards = getData();
+const mainPage = document.querySelector('#main-page');
+const petsPage = document.querySelector('#pets-page');
 
 window.onload = () => {
   console.log('Complete');
@@ -17,23 +20,32 @@ window.onload = () => {
     renderDataToDom();
     console.log(dataCards);
   }
+  if (mainPage) {
+    console.log(mainPage);
+    SwiperMain();
+    addCardClickerHandler();
+  }
+  if (petsPage) {
+    console.log(petsPage);
+    SwiperPets();
+    addCardClickerHandler();
+  }
 
-  SwiperMain();
-
-  //generate Base Modal from Modal Class
+  // generate Base Modal from Modal Class
   // addToolsClickHandler();
-  addCardClickerHandler();
 };
 
 function renderDataToDom() {
   const cardsWrapper = getCardsWrapper();
   generateCards(dataCards).forEach((card) => {
     cardsWrapper.append(card.generateCard());
+    console.log('generate');
   });
 }
 
 function getCardsWrapper() {
   const cardsContainer = document.querySelector('.cards-wrapper');
+  console.log(cardsContainer, 'asda');
   cardsContainer.innerHTML = '';
   return cardsContainer;
 }
