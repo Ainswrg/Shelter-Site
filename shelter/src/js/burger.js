@@ -1,8 +1,12 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 const body = document.querySelector('body');
 const headerMain = document.querySelector('.header-main');
 const headerPets = document.querySelector('.header-pets');
 const menuIcon = document.querySelector('.menu');
 const main = document.querySelector('.main');
+const mediaQueryForBurger = window.matchMedia('(max-width: 767px)');
+
+mediaQueryForBurger.addEventListener('change', () => closeBurger());
 
 export const menu = menuIcon.addEventListener('click', (e) => {
   e.stopPropagation();
@@ -26,14 +30,18 @@ export const onOverlayClick = addEventListener('click', (e) => {
     e.target.className !== 'navigation-menu__container' &&
     e.target.className !== 'item'
   ) {
-    menuIcon.classList.remove('_active');
-    body.classList.remove('_active');
-    main.classList.remove('_active');
-    if (headerMain) {
-      headerMain.classList.remove('_active');
-    }
-    if (headerPets) {
-      headerPets.classList.remove('_active');
-    }
+    closeBurger();
   }
 });
+
+function closeBurger() {
+  menuIcon.classList.remove('_active');
+  body.classList.remove('_active');
+  main.classList.remove('_active');
+  if (headerMain) {
+    headerMain.classList.remove('_active');
+  }
+  if (headerPets) {
+    headerPets.classList.remove('_active');
+  }
+}

@@ -13,6 +13,7 @@ const btnPrev1 = document.querySelector('.slider-pet__paginator-left2');
 const btnNext = document.querySelector('.slider-pet__paginator-right1');
 const btnNext1 = document.querySelector('.slider-pet__paginator-right2');
 let currentPage = 1;
+let numberSlides = 0;
 
 const SwiperPets = () => {
   const mySwiper = new Swiper('.slider-pet__cards', {
@@ -21,6 +22,7 @@ const SwiperPets = () => {
     on: {
       init: function (sw) {
         console.log('init pets');
+        resChange(sw.slides.length);
       },
     },
 
@@ -64,9 +66,6 @@ const SwiperPets = () => {
       },
     },
   });
-  const length = mySwiper.slides.length;
-  let numberSlides = 0;
-  resChange(mySwiper);
 
   btnPrev1.addEventListener('click', () => {
     mySwiper.setProgress(0, 200);
@@ -108,29 +107,29 @@ const SwiperPets = () => {
     }
   }
 
-  function resChange(sw) {
-    let vw = window.innerWidth;
-    if (vw <= 768) {
+  function resChange(length) {
+    const mediaQuery = window.matchMedia('(min-width: 1280px)');
+    const mediaQuery1 = window.matchMedia('(min-width: 768px) and (max-width: 1279px)');
+    const mediaQuery2 = window.matchMedia('(max-width: 767px)');
+    if (mediaQuery.matches) {
+      numberSlides = Math.floor(length / 2);
+      //делим на кол-во столбов
+      numberSlides = Math.floor(numberSlides / 4);
+    }
+    if (mediaQuery1.matches) {
+      numberSlides = Math.floor(length / 3);
+      //делим на кол-во столбов
+      numberSlides = Math.floor(numberSlides / 2);
+    }
+    if (mediaQuery2.matches) {
       //делим на кол-во рядов
       numberSlides = Math.floor(length / 3);
       //делим на кол-во столбов
       numberSlides = Math.floor(numberSlides / 1);
     }
-    if (vw > 768 && vw <= 1279) {
-      //делим на кол-во рядов
-      numberSlides = Math.floor(length / 3);
-      //делим на кол-во столбов
-      numberSlides = Math.floor(numberSlides / 2);
-    }
-    if (vw > 1279) {
-      //делим на кол-во рядов
-      numberSlides = Math.floor(length / 2);
-      //делим на кол-во столбов
-      numberSlides = Math.floor(numberSlides / 4);
-    }
   }
   mySwiper.on('slideChange', (sw) => {
-    resChange(sw);
+    resChange(sw.slides.length);
   });
 };
 export default SwiperPets;
