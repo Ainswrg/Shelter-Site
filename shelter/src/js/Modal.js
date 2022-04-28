@@ -63,6 +63,7 @@ export class Modal {
   openModal() {
     document.body.append(this.overlay);
     document.body.style.overflow = 'hidden';
+    setTimeout(() => this.modal.classList.add('_active'), 100);
   }
 
   closeModal(e) {

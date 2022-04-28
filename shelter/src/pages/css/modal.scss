@@ -19,6 +19,9 @@
   background-color: white;
   width: 900px;
   height: fit-content;
+  top: -100%;
+  transform: scale(0) rotate(-360deg);
+  transition: all ease-in-out 0.3s;
   @media (max-width: 1279px) {
     width: 630px;
     max-height: 350px;
@@ -44,6 +47,10 @@
     width: 52px;
     height: 52px;
     cursor: pointer;
+    transition: 0.3s ease 0s;
+    &:hover {
+      background-color: $primary-hover;
+    }
     @media (max-width: 767px) {
       right: -30px;
     }
@@ -155,4 +162,8 @@
       }
     }
   }
+}
+.modal._active {
+  top: 0;
+  transform: scale(1) rotate(0deg);
 }
