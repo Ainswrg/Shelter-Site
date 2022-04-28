@@ -14,6 +14,7 @@ const SwiperMain = () => {
         console.log('initialized');
       },
     },
+    loop: true,
     navigation: {
       nextEl: '.slider__arrow-right',
       prevEl: '.slider__arrow-left',

@@ -32,14 +32,18 @@ const petsPage = document.querySelector('#pets-page');
 window.onload = () => {
   //render card
 
-  if (dataArr) {
-    renderDataToDom();
-  }
   if (mainPage) {
+    dataArr = random(dataCards, 1, 0);
+    if (dataArr) {
+      renderDataToDom();
+    }
     SwiperMain();
     addCardClickerHandler();
   }
   if (petsPage) {
+    if (dataArr) {
+      renderDataToDom();
+    }
     SwiperPets();
     addCardClickerHandler();
   }
