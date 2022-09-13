@@ -1,0 +1,44 @@
+$primary: #f1cdb3;
+$color-dark: #545454;
+$color-dark-4: #4C4C4C;
+
+.about {
+  height: 588px;
+  &__container {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+  }
+  &__pets {
+    background: url('../../../assets/images/about-pets.png') no-repeat center center;
+    margin-top: 80px;
+    max-width: 300px;
+    height: 408px;
+    display: flex;
+  }
+  &__content {
+    margin-top: 95px;
+    width: 100%;
+  }
+  &__heading {
+    margin: 0;
+    font-family: Georgia;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    max-width: 350px;
+    color: $color-dark;
+  }
+  &__subheading {
+    max-width: 430px;
+    margin-top: 25px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: $color-dark-4;
+  }
+}

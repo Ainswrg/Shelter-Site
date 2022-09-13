@@ -1,0 +1,191 @@
+$primary: #f1cdb3;
+$primary-hover: #fddcc4;
+$primary-active: #f4914a;
+$color-dark: #545454;
+$color-dark-2: #292929;
+$color-dark-3: #CDCDCD;
+
+.our-pets {
+  height: 1342px + 120px;
+  width: 1280px;
+  &__container {
+    height: 1162px;
+    width: 1200px;
+  }
+  &__heading {
+    margin: 0 auto;
+    margin-top: 200px;
+    max-width: 400px;
+    font-family: Georgia;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: $color-dark;
+  }
+  .slider {
+    margin: 0 auto;
+    margin-top: 45px;
+    width: 1200px;
+    height: 1227px;
+    display: grid;
+    grid-template-rows: 930px 52px;
+    row-gap: 45px;
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(4, 270px);
+      grid-template-rows: repeat(2, 435px);
+      grid-gap: 30px 40px;
+    }
+    .card {
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      margin-top: 15px;
+      &:hover {
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        .card__button {
+          transition: 0.3s ease-in-out;
+          background-color: $primary-hover;
+        }
+        img {
+          filter: saturate(2);
+        }
+      }
+      &:active {
+        .card__button {
+          background-color: $primary-active;
+          transition: 0.3s ease-in-out;
+        }
+      }
+      figure {
+        margin: 0;
+        img {
+          border-radius: 12px 12px 0 0;
+          cursor: pointer;
+          height: 270px;
+          width: 270px;
+          margin: 0;
+          transition: 0.5s ease-in-out;
+        }
+        figcaption {
+          margin: 0;
+          margin-top: 25px;
+          display: flex;
+          justify-content: center;
+          font-family: Georgia;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 23px;
+          letter-spacing: 0.06em;
+          text-align: center;
+          color: $color-dark;
+        }
+      }
+      &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 30px;
+        background-color: transparent;
+        height: 50px;
+        width: 185px;
+        border-radius: 100px;
+        font-family: Georgia;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.06em;
+        text-align: left;
+        color: $color-dark-2;
+        cursor: pointer;
+        text-decoration: none;
+        border: 1px solid $primary;
+      }
+    }
+    &__navigation {
+      margin: 0 auto;
+      width: 340px;
+      height: 52px;
+      list-style: none;
+      display: flex;
+      gap: 0 20px;
+    }
+    &__paginator {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid $primary;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+      &:nth-child(1) {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: url('../../../assets/icons/left2.svg');
+          top: 18px;
+          left: 10px;
+        }
+      }
+      &:nth-child(2) {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: url('../../../assets/icons/left1.svg');
+          top: 18px;
+          left: 19px;
+        }
+      }
+      &:nth-child(4) {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: url('../../../assets/icons/right1.svg');
+          top: 18px;
+          left: 20px;
+        }
+      }
+      &:nth-child(5) {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: url('../../../assets/icons/right2.svg');
+          top: 18px;
+          left: 13px;
+        }
+      }
+    }
+    &__button {
+      font-family: Georgia;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 23px;
+      letter-spacing: 0.06em;
+      text-align: center;
+      color: $color-dark-2;
+      transition: 0.3s ease-in-out;
+      position: relative;
+    }
+    &__paginator.inactive {
+      border: 2px solid $color-dark-3;
+      color: $color-dark;
+      pointer-events: none;
+    }
+    &__paginator.active {
+      background-color: $primary;
+      pointer-events: none;
+    }
+    &__paginator {
+      &:hover {
+        background-color: $primary-hover;
+      }
+      &:active {
+        background-color: $primary-active;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+}

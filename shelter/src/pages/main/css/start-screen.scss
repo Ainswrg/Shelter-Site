@@ -1,0 +1,75 @@
+$primary: #f1cdb3;
+$primary-hover: #FDDCC4;
+$primary-active: #f4914a;
+$color-dark-2: #292929;
+$color-dark-3: #CDCDCD;
+
+.start-screen {
+  background: url('../../../assets/images/start-screen-background.png');
+  height: 908px;
+  &__container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding-top: 180px;
+    justify-content: space-between;
+    max-width: 1200px;
+    position: static;
+    z-index: 2;
+    .content {
+      max-width: 460px;
+      width: 100%;
+      margin-top: 163px;
+      color: #fff;
+      &__heading {
+        margin: 0;
+        font-family: Georgia;
+        font-size: 44px;
+        font-weight: 400;
+        line-height: 57px;
+        letter-spacing: 0em;
+        text-align: left;
+        max-width: 350px;
+      }
+      &__subheading {
+        margin-top: 42px;
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: $color-dark-3;
+      }
+      &__button {
+        text-decoration: none;
+        background-color: $primary;
+        display: inline-block;
+        margin-top: 26px;
+        border-radius: 30px;
+        padding: 15px 45px;
+        font-family: Georgia;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.06em;
+        text-align: left;
+        color: $color-dark-2;
+        cursor: pointer;
+        &:hover {
+          background-color: $primary-hover;
+          transition: 0.3s ease-in-out;
+        }
+        &:active {
+          background-color: $primary-active;
+          transition: 0.3s ease-in-out;
+        }
+      }
+    }
+    .puppy {
+      background-image: url('../../../assets/images/start-screen-puppy.png');
+      width: 698px;
+      height: 728px;
+    }
+  }
+}
