@@ -16,7 +16,13 @@
   font-weight: normal;
   src: url('./assets/fonts/georgia.ttf');
 }
-@import './settings';
+@import './_settings';
+@import './pages/pets/index.scss';
+@import './pages/main/index.scss';
+@import './pages/css/header.scss';
+@import './pages/css/footer.scss';
+@import './pages/css/menu.scss';
+@import './pages/css/modal.scss';
 
 *,
 *::before,
@@ -28,6 +34,13 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body._active {
+  overflow: hidden;
+  .main {
+    overflow: visible;
+  }
 }
 
 .wrapper {
@@ -42,9 +55,12 @@ html {
   width: 100%;
   background-color: #ffffff;
 }
+.main {
+  position:relative;
+  overflow: hidden;
+}
 
 .bg {
-  position: relative;
   z-index: 1;
   background: linear-gradient(90deg, rgba(91, 72, 58, 1) 1%, rgba(33, 31, 32, 1) 100%);
 }
@@ -53,281 +69,7 @@ html {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 clamp(10px, calc(10px + (20 - 10) * ((100vw - 320px) / (768 - 320))), 20px);
   &:nth-child(odd) {
     background-color: #f6f6f6;
-  }
-}
-
-@each $header in 'main' 'pets' {
-  .header-#{$header} {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    z-index: 2;
-    max-width: 1280px;
-    width: 100%;
-    @if $header == 'main' {
-      max-height: 60px;
-      margin-top: clamp(30px, calc(30px + (60 - 30) * ((100vw - 768px) / (1280 - 768))), 60px);
-      height: 100%;
-      @media (max-width: 768px) {
-        margin-top: 30px;
-      }
-    }
-    @if $header == 'pets' {
-      height: 120px;
-      background: #fff;
-      position: fixed;
-    }
-  }
-  .header-container {
-    padding: 0 clamp(30px, calc(30px + (40 - 30) * ((100vw - 768px) / (1280 - 768))), 40px);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    @media (max-width: 768px) {
-      padding: 0 clamp(10px, calc(10px + (30 - 10) * ((100vw - 320px) / (768 - 320))), 30px);
-    }
-    &__logo {
-      text-decoration: none;
-      margin-top: 2px;
-      &:hover {
-        filter: saturate(3);
-      }
-    }
-    &__logo-title {
-      @include font(Georgia, 32px, 35.2px, 400, 2px);
-      margin: 0;
-      color: $primary;
-    }
-    &__logo-subtitle {
-      @include font(Arial, 13px, 14.95px, 400, 1.3px);
-      margin-left: 4px;
-      margin-top: 10px;
-      color: #ffffff;
-    }
-    &__navbar {
-      max-width: 443px;
-      width: 100%;
-      margin-top: -4px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      @media (max-width: 767px) {
-        display: none;
-      }
-      ul {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        li {
-          list-style: none;
-          font-family: Arial;
-          font-size: 15px;
-          line-height: 24px;
-          font-weight: 400;
-          a {
-            text-decoration: none;
-            cursor: pointer;
-            position: relative;
-            color: $color-dark-3;
-            &:after {
-              display: block;
-              position: absolute;
-              top: 22px;
-              left: 0;
-              width: 0;
-              height: 3px;
-              background-color: $primary;
-              content: '';
-              transition: width 0.3s ease-out;
-            }
-            &:hover:after,
-            &:focus:after {
-              width: 100%;
-              color: #ffffff;
-            }
-          }
-          a.active {
-            color: #fff;
-            &:after {
-              color: #fff;
-              display: block;
-              position: absolute;
-              top: 22px;
-              left: 0;
-              width: 100%;
-              height: 3px;
-              background-color: $primary;
-              content: '';
-              transition: width 0.3s ease-out;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-.menu {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  top: 21px;
-  right: 43px;
-  z-index: 21;
-  display: none;
-  cursor: pointer;
-  @media (max-width: 767px) {
-    display: block;
-  }
-  &__icon {
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    visibility: visible;
-    top: 0px;
-    right: 0px;
-    background: $primary;
-    z-index: 22;
-    transform: scale(1) translate(0px, -50%);
-    transition: all 0.3s ease 0s;
-
-    &::before {
-      @include icon;
-      background: $primary;
-      top: 20px;
-      right: 0;
-    }
-    &::after {
-      @include icon;
-      background: $primary;
-      top: 10px;
-    }
-  }
-  &:hover {
-    .menu__icon {
-      top: 50%;
-      transform: rotate(-45deg) translate(0px, -50%);
-      &::before {
-        top: 50%;
-        transform: rotate(95deg) translate(0px, -50%);
-      }
-      &::after {
-        transform: scale(0) translate(0px, -50%);
-        top: 50%;
-      }
-    }
-  }
-}
-.menu._active {
-  top: 50%;
-  transform: rotate(-90deg) translate(-16px, 75%);
-}
-
-.footer {
-  min-height: 350px;
-  max-height: fit-content;
-  &__container {
-    display: flex;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    height: fit-content;
-    max-width: 1200px;
-    justify-content: center;
-    column-gap: 160px;
-    row-gap: 65px;
-    min-height: 310px;
-    padding-top: clamp(15px, calc(15px + (40 - 15) * ((100vw - 768px) / (1280 - 768))), 40px);
-    position: relative;
-    z-index: 4;
-    row-gap: clamp(0px, calc(65px - (65 - 0) * ((100vw - 1149px) / (1280 - 1149))), 65px);
-    @media (max-width: 1279px) {
-      column-gap: 161px;
-      row-gap: clamp(15px, calc(15px + (65 - 15) * ((100vw - 320px) / (768 - 320))), 65px);
-      column-gap: clamp(60px, calc(60px + (190 - 60) * ((100vw - 768px) / (1280 - 768))), 190px);
-    }
-  }
-  @each $name in $footerConfig {
-    &__#{nth($name, 1)} {
-      height: 234px;
-      width: nth($name, 2);
-      grid-row: 1/3;
-      @media (max-width: 768px) {
-        grid-row: 1;
-        grid-column: nth($name, 3);
-      }
-      @if nth($name, 1) == 'location' {
-        @media (max-width: 767px) {
-          .footer__location-boston {
-            margin-top: 40px;
-          }
-          .footer__location-london {
-            margin-top: 44px;
-          }
-        }
-      }
-    }
-    &__#{nth($name, 1)}-title {
-      margin: 0;
-      font-family: Georgia;
-      font-size: clamp(25px, calc(25px + (35 - 25) * ((100vw - 320px) / (768 - 320))), 35px);
-      font-weight: 400;
-      line-height: clamp(32px, calc(32px + (45 - 32) * ((100vw - 320px) / (768 - 320))), 45px);
-      letter-spacing: 0.059em;
-      text-align: left;
-      color: #fff;
-      margin-top: 16px;
-      @media (max-width: 767px) {
-        text-align: center;
-        white-space: pre-line;
-        padding: 0 5px;
-      }
-    }
-    @each $item in $footerListConfig {
-      &__#{nth($name, 1)}-#{nth($item, 1)} {
-        font-family: Georgia;
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 23px;
-        letter-spacing: 0.06em;
-        position: relative;
-        cursor: pointer;
-        margin: 0;
-        margin-top: nth($item, 3);
-        padding-left: nth($item, 4);
-        @media (max-width: 767px) {
-          margin-left: nth($item, 6);
-        }
-        a {
-          color: $primary;
-          text-decoration: none;
-          &::before {
-            content: url('./assets/icons/#{nth($item, 2)}.svg');
-            position: absolute;
-            top: nth($item, 5);
-            left: 0px;
-          }
-        }
-        &:hover {
-          filter: saturate(3);
-        }
-      }
-    }
-  }
-
-  &__puppy {
-    background-image: url('./assets/images/footer-puppy.png');
-    width: 300px;
-    height: 310px;
-    @media (max-width: 1279px) {
-      grid-row: 2;
-      grid-column: 1/3;
-      width: clamp(260px, calc(260px + (300 - 260) * ((100vw - 320px) / (768 - 320))), 300px);
-      height: clamp(269px, calc(269px + (310 - 269) * ((100vw - 320px) / (768 - 320))), 310px);
-      background-size: cover;
-      margin-top: clamp(15px, calc(28px - (28 - 15) * ((100vw - 320px) / (768 - 320))), 28px);
-    }
   }
 }

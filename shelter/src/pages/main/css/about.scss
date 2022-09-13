@@ -1,4 +1,4 @@
-@import '../../../settings';
+// @import './_settings';
 
 .about {
   max-height: 1048px;
@@ -21,7 +21,7 @@
     }
   }
   &__pets {
-    background: url('../../../assets/images/about-pets.png') no-repeat center center;
+    background: url('./assets/images/about-pets.png') no-repeat center center;
     margin-top: 80px;
     margin-left: clamp(0px, calc(67px - (67 - 0) * ((100vw - 768px) / (1280 - 768))), 67px);
     max-width: 300px;
@@ -63,13 +63,11 @@
     max-width: 430px;
     max-width: clamp(300px, calc(300px + (430 - 300) * ((100vw - 420px) / (420 - 320))), 430px);
     margin-top: 24px;
+    @include font(Arial, 15px, 24px, 400, 0px);
     font-family: Arial;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0px;
     text-align: left;
-    color: $color-dark-4;
+    color: $color-dark-3;
+    padding: 0 clamp(0px, calc(10px - (10 - 0) * ((100vw - 320px) / (768 - 320))), 10px);
     @media (max-width: 767px) {
       margin: 24px 15px 0px;
       text-align: justify;

@@ -11,26 +11,38 @@
 <body>
   <div class="wrapper">
     <div class="container">
-      <header class="header-main">
+      <header class="header-main bg">
         <div class="header-container">
           <a href="./index.html" class="header-container__logo">
             <h1 class="header-container__logo-title">Cozy House</h1>
             <h4 class="header-container__logo-subtitle">Shelter for pets in Boston</h4>
           </a>
+          <nav class="header-container__navbar">
+            <ul class="list">
+              <li class="item"><a class="active" href="#">About the shelter</a></li>
+              <li class="item"><a href="./second.html">Our pets</a></li>
+              <li class="item"><a href="#help">Help the shelter</a></li>
+              <li class="item"><a href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
           <div class="menu">
             <span class="menu__icon"></span>
           </div>
-          <nav class="header-container__navbar">
-            <ul>
-              <li><a class="active" href="#">About the shelter</a></li>
-              <li><a href="./second.html">Our pets</a></li>
-              <li><a href="#help">Help the shelter</a></li>
-              <li><a href="#contacts">Contacts</a></li>
-            </ul>
-          </nav>
         </div>
       </header>
       <main class="main">
+        <div class="navigation-menu">
+          <div class="navigation-menu__container">
+            <nav class="navigation-menu__navbar">
+              <ul class="list">
+                <li class="item"><a class="nav-link active" href="#">About the shelter</a></li>
+                <li class="item"><a class="nav-link" href="./second.html">Our pets</a></li>
+                <li class="item"><a class="nav-link" href="#help">Help the shelter</a></li>
+                <li class="item"><a class="nav-link" href="#contacts">Contacts</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
         <section class="section start-screen bg">
           <div class="start-screen__container">
             <div class="content">
@@ -68,37 +80,39 @@
           </div>
         </section>
         <section id="our-friends" class="section pets">
-          <div class="pets__container">
+          <div id="main-page" class="pets__container">
             <h3 class="pets__heading">Our friends who are&nbsp;looking for a house</h3>
             <div class="slider">
               <span class="slider__arrow-left"></span>
               <div class="slider__cards">
-                <div class="card">
-                  <figure>
-                    <img src="../../assets/images/pets-katrine.jpg">
-                    <figcaption>
-                      Katrine
-                    </figcaption>
-                  </figure>
-                  <button class="card__button">Learn more</button>
-                </div>
-                <div class="card">
-                  <figure>
-                    <img src="../../assets/images/pets-jennifer.jpg">
-                    <figcaption>
-                      Jennifer
-                    </figcaption>
-                  </figure>
-                  <button class="card__button">Learn more</button>
-                </div>
-                <div class="card">
-                  <figure>
-                    <img src="../../assets/images/pets-woody.jpg">
-                    <figcaption>
-                      Woody
-                    </figcaption>
-                  </figure>
-                  <button class="card__button">Learn more</button>
+                <div class="cards-wrapper swiper-wrapper">
+                  <div class="swiper-slide card">
+                    <figure>
+                      <img src="../../assets/images/pets-katrine.jpg" alt="katrine">
+                      <figcaption>
+                        Katrine
+                      </figcaption>
+                    </figure>
+                    <button class="card__button">Learn more</button>
+                  </div>
+                  <div class="swiper-slide card">
+                    <figure>
+                      <img src="../../assets/images/pets-jennifer.jpg" alt="jennifer">
+                      <figcaption>
+                        Jennifer
+                      </figcaption>
+                    </figure>
+                    <button class="card__button">Learn more</button>
+                  </div>
+                  <div class="swiper-slide card">
+                    <figure>
+                      <img src="../../assets/images/pets-woody.jpg" alt="woody">
+                      <figcaption>
+                        Woody
+                      </figcaption>
+                    </figure>
+                    <button class="card__button">Learn more</button>
+                  </div>
                 </div>
               </div>
               <span class="slider__arrow-right"></span>

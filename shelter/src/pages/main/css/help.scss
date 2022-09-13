@@ -1,4 +1,4 @@
-@import '../../../settings';
+// @import './_settings';
 
 .help {
   height: 100%;
@@ -12,6 +12,7 @@
     width: clamp(630px, calc(630px + (1200 - 630) * ((100vw - 768px) / (1280 - 768))), 1200px);
     height: fit-content;
     margin-bottom: 100px;
+    padding: 0 clamp(10px, calc(10px + (20 - 10) * ((100vw - 320px) / (768 - 320))), 20px);
     @media (max-width: 320px) {
       margin-bottom: 42px;
     }
@@ -64,7 +65,7 @@
       &::after {
         position: absolute;
         content: '';
-        background-image: url('../../../assets/icons/#{nth($name, 1)}.svg');
+        background-image: url('./assets/icons/#{nth($name, 1)}.svg');
         background-repeat: no-repeat;
         background-position: center top;
         top: 0;

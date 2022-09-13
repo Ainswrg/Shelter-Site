@@ -1,7 +1,23 @@
-@import '../../settings.scss';
+@import '../../_settings.scss';
+@import './css/our-pets.scss';
 
+.header-pets._active {
+  display: flex;
+  justify-content: flex-end;
+  .header-container {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    &__logo-subtitle {
+      // color: $color-light-3;
+    }
+  }
+}
 .header-pets .header-container {
+  position: fixed;
+  z-index: 5;
   .menu {
+    top: 15px;
     &__icon {
       background: black;
       &::before {
@@ -9,6 +25,16 @@
       }
       &::after {
         background: black;
+      }
+    }
+  }
+  .menu._active {
+    right: 78px;
+    top: 0px;
+    transform: rotate(-90deg) translate(-14px, 75%);
+    .navigation-menu {
+      &__container {
+        position: fixed;
       }
     }
   }

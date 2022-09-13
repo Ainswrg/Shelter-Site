@@ -1,4 +1,4 @@
-@import '../../../settings';
+// @import './_settings';
 
 .donation {
   min-height: 462px;
@@ -17,7 +17,7 @@
     }
   }
   &__dog {
-    background: url('../../../assets/images/donation-dog.png');
+    background: url('./assets/images/donation-dog.png');
     max-width: 505px;
     height: 261px;
     width: 90%;
@@ -99,7 +99,7 @@
       margin-top: 22px;
     }
     &::before {
-      content: url('../../../assets/icons/credit-card.svg');
+      content: url('./assets/icons/credit-card.svg');
       position: absolute;
       top: 9px;
       left: 15px;
@@ -115,12 +115,12 @@
     letter-spacing: 0px;
     text-align: left;
     max-width: 380px;
-    color: $color-dark-5;
+    color: $color-light-3;
     @media (max-width: 767px) {
       font-size: 12px;
       line-height: 18px;
       text-align: justify;
-      padding: 0 10px;
+      padding: 0 20px;
     }
   }
 }
