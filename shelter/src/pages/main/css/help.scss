@@ -1,92 +1,92 @@
-$color-dark: #545454;
+@import '../../../settings';
 
 .help {
-  height: 611px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  @media (max-width: 320px) {
+    min-height: 745px;
+  }
   &__container {
-    display: grid;
-    justify-content: center;
-    grid-template-rows: 90px 1fr;
-    max-height: 431px;
-    width: 100%;
+    margin-top: clamp(42px, calc(42px + (80 - 42) * ((100vw - 320px) / (768 - 320))), 80px);
+    width: clamp(630px, calc(630px + (1200 - 630) * ((100vw - 768px) / (1280 - 768))), 1200px);
+    height: fit-content;
+    margin-bottom: 100px;
+    @media (max-width: 320px) {
+      margin-bottom: 42px;
+    }
   }
   &__heading {
     margin: 0 auto;
-    margin-top: 80px;
     max-width: 400px;
     font-family: Georgia;
-    font-size: 35px;
+    font-size: clamp(25px, calc(25px + (35 - 25) * ((100vw - 320px) / (768 - 320))), 35px);
+    line-height: clamp(32px, calc(32px + (45 - 32) * ((100vw - 320px) / (768 - 320))), 45px);
     font-weight: 400;
-    line-height: 45px;
     letter-spacing: 0.06em;
     text-align: center;
     color: $color-dark;
   }
   &__list {
     display: flex;
-    max-width: 1026px;
-    max-height: 281px;
+    width: 100%;
     list-style: none;
     flex-wrap: wrap;
-    gap: 55px 120px;
-    space-items: center;
-    margin: 0;
-    margin-top: 140px;
+    gap: 55px clamp(60px, calc(60px + (120 - 60) * ((100vw - 768px) / (1280 - 768))), 120px);
+    margin-top: clamp(41px, calc(41px + (61 - 41) * ((100vw - 320px) / (768 - 320))), 61px);
     padding: 0;
     justify-content: center;
+    @media (max-width: 1279px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: clamp(30px, calc(30px + (55 - 30) * ((100vw - 320px) / (768 - 320))), 55px);
+      column-gap: clamp(30px, calc(30px + (60 - 30) * ((100vw - 320px) / (768 - 320))), 60px);
+      justify-items: center;
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      padding: 0 5px;
+      gap: 30px;
+      justify-content: flex-start;
+    }
   }
-  &__item {
-    height: 113px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background-repeat: no-repeat;
-    background-position: center top;
-    &:nth-of-type(1) {
-      background-image: url('../../../assets/icons/petFood.svg');
-      width: 82px;
+
+  @each $name in $itemConfig {
+    &__item-#{nth($name, 1)} {
+      height: 113px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+      width: nth($name, 2);
+      &::after {
+        position: absolute;
+        content: '';
+        background-image: url('../../../assets/icons/#{nth($name, 1)}.svg');
+        background-repeat: no-repeat;
+        background-position: center top;
+        top: 0;
+        width: 100%;
+        height: clamp(50px, calc(50px + (60 - 50) * ((100vw - 320px) / (768 - 320))), 60px);
+        background-size: contain;
+      }
+      @media (max-width: 1279px) {
+        width: clamp(130px, calc(130px + (170 - 130) * ((100vw - 350px) / (768 - 350))), 170px);
+        height: clamp(87px, calc(87px + (113 - 87) * ((100vw - 350px) / (768 - 350))), 113px);
+      }
     }
-    &:nth-of-type(2) {
-      background-image: url('../../../assets/icons/transportation.svg');
-      width: 150px;
-    }
-    &:nth-of-type(3) {
-      background-image: url('../../../assets/icons/toys.svg');
-      width: 60px;
-    }
-    &:nth-of-type(4) {
-      background-image: url('../../../assets/icons/bowls-and-cups.svg');
-      width: 153px;
-    }
-    &:nth-of-type(5) {
-      background-image: url('../../../assets/icons/shampoos.svg');
-      width: 101px;
-    }
-    &:nth-of-type(6) {
-      background-image: url('../../../assets/icons/vitamins.svg');
-      width: 89px;
-    }
-    &:nth-of-type(7) {
-      background-image: url('../../../assets/icons/medicines.svg');
-      width: 101px;
-    }
-    &:nth-of-type(8) {
-      background-image: url('../../../assets/icons/collars-or-leashes.svg');
-      width: 165px;
-    }
-    &:nth-of-type(9) {
-      background-image: url('../../../assets/icons/sleeping-area.svg');
-      width: 143px;
-    }
-    h4 {
-      margin: 0;
-      width: fit-content;
-      font-family: Georgia;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 23px;
-      letter-spacing: 0.06em;
-      text-align: center;
-      color: $color-dark;
-    }
+  }
+  h4 {
+    margin: 0;
+    width: fit-content;
+    font-family: Georgia;
+    font-size: clamp(15px, calc(15px + (20 - 15) * ((100vw - 320px) / (768 - 320))), 20px);
+    line-height: clamp(17px, calc(17px + (23 - 17) * ((100vw - 320px) / (768 - 320))), 23px);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: $color-dark;
   }
 }

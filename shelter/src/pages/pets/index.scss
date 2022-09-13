@@ -1,17 +1,25 @@
-$color-dark: #545454;
-$color-dark-2: #292929;
+@import '../../settings.scss';
 
+.header-pets .header-container {
+  .menu {
+    &__icon {
+      background: black;
+      &::before {
+        background: black;
+      }
+      &::after {
+        background: black;
+      }
+    }
+  }
 
-.header-pets.header-container {
-  padding-top: 30px;
-
-  .header-container__logo-title {
+  &__logo-title {
     color: $color-dark;
   }
-  .header-container__logo-subtitle {
+  &__logo-subtitle {
     color: $color-dark-2;
   }
-  .header-container__navbar {
+  &__navbar {
     a {
       color: $color-dark;
       &:hover:after,

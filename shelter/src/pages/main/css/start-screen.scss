@@ -1,75 +1,107 @@
-$primary: #f1cdb3;
-$primary-hover: #FDDCC4;
-$primary-active: #f4914a;
-$color-dark-2: #292929;
-$color-dark-3: #CDCDCD;
+@import '../../../settings';
 
 .start-screen {
-  background: url('../../../assets/images/start-screen-background.png');
-  height: 908px;
   &__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     height: fit-content;
-    padding-top: 180px;
+    justify-content: center;
+    padding-top: clamp(150px, calc(150px + (180 - 150) * ((100vw - 768px) / (1280 - 768))), 180px);
+    margin: 0 auto;
     justify-content: space-between;
     max-width: 1200px;
     position: static;
     z-index: 2;
-    .content {
-      max-width: 460px;
-      width: 100%;
-      margin-top: 163px;
-      color: #fff;
-      &__heading {
-        margin: 0;
-        font-family: Georgia;
-        font-size: 44px;
-        font-weight: 400;
-        line-height: 57px;
-        letter-spacing: 0em;
-        text-align: left;
-        max-width: 350px;
-      }
-      &__subheading {
-        margin-top: 42px;
-        font-family: Arial;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0px;
-        text-align: left;
-        color: $color-dark-3;
-      }
-      &__button {
-        text-decoration: none;
-        background-color: $primary;
-        display: inline-block;
-        margin-top: 26px;
-        border-radius: 30px;
-        padding: 15px 45px;
-        font-family: Georgia;
-        font-size: 17px;
-        font-weight: 400;
-        line-height: 22px;
+    transition: $transition;
+    @media (max-width: 1279px) {
+      grid-template-columns: 1fr;
+      padding-top: 150px;
+      justify-content: center;
+    }
+  }
+  .content {
+    max-width: 460px;
+    width: 100%;
+    margin-top: clamp(0px, calc(0px + (163 - 0) * ((100vw - 1099px) / (1280 - 1099))), 163px);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1279px) {
+      margin: 0 auto;
+    }
+
+    &__heading {
+      font-family: Georgia;
+      font-size: clamp(25px, calc(25px + (44 - 25) * ((100vw - 320px) / (768 - 320))), 44px);
+        line-height: clamp(32px, calc(32px + (57 - 32) * ((100vw - 320px) / (768 - 320))), 57px);
+      font-weight: 400;
+      letter-spacing: 0em;
+      text-align: left;
+      max-width: 350px;
+      @media (max-width: 767px) {
+        text-align: center;
         letter-spacing: 0.06em;
-        text-align: left;
-        color: $color-dark-2;
-        cursor: pointer;
-        &:hover {
-          background-color: $primary-hover;
-          transition: 0.3s ease-in-out;
-        }
-        &:active {
-          background-color: $primary-active;
-          transition: 0.3s ease-in-out;
-        }
       }
     }
-    .puppy {
-      background-image: url('../../../assets/images/start-screen-puppy.png');
-      width: 698px;
-      height: 728px;
+    &__subheading {
+      margin-top: 42px;
+      font-family: Arial;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: $color-dark-3;
+      @media (max-width: 767px) {
+        text-align: center;
+      }
+    }
+    &__button {
+      margin-top: 42px;
+      width: fit-content;
+      text-decoration: none;
+      background-color: $primary;
+      display: inline-block;
+      border-radius: 30px;
+      padding: 15px 45px;
+      font-family: Georgia;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0.06em;
+      text-align: left;
+      color: $color-dark-2;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary-hover;
+        transition: 0.3s ease-in-out;
+      }
+      &:active {
+        background-color: $primary-active;
+        transition: 0.3s ease-in-out;
+      }
+      @media (max-width: 1279px) {
+        margin: 0 auto;
+        margin-top: 42px;
+      }
+    }
+  }
+  .puppy {
+    background-image: url('../../../assets/images/start-screen-puppy.png');
+    background-repeat: no-repeat;
+    width: clamp(569px, calc(569px + (698 - 569) * ((100vw - 768px) / (1280 - 768))), 698px);
+    height: clamp(593px, calc(593px + (728 - 593) * ((100vw - 768px) / (1280 - 768))), 728px);
+    background-size: cover;
+    @media (max-width: 1279px) {
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+
+    @media (max-width: 768px) {
+      width: clamp(260px, calc(260px + (569 - 260) * ((100vw - 320px) / (768 - 320))), 569px);
+      height: clamp(277px, calc(277px + (593 - 277) * ((100vw - 320px) / (768 - 320))), 593px);
+      margin-left: clamp(38px, calc(38px + (150 - 38) * ((100vw - 320px) / (768 - 320))), 150px);
     }
   }
 }
